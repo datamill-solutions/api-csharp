@@ -1,4 +1,4 @@
-# IO.Swagger.Api.GenderApi
+# DataMill.Api.GenderApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -20,9 +20,9 @@ Recognizes the gender of a given first name. (Works only with common first names
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -86,9 +86,9 @@ Recognizes the gender of a given first name considering country specific peculia
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

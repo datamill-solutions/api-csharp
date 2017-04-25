@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorInternalError
+# DataMill.Model.ErrorInternalError
 ## Properties
 
 Name | Type | Description | Notes

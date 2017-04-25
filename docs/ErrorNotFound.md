@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorNotFound
+# DataMill.Model.ErrorNotFound
 ## Properties
 
 Name | Type | Description | Notes

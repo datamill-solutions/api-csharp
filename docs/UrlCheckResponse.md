@@ -1,4 +1,4 @@
-# IO.Swagger.Model.UrlCheckResponse
+# DataMill.Model.UrlCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

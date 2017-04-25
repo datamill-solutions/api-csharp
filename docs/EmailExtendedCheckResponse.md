@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EmailExtendedCheckResponse
+# DataMill.Model.EmailExtendedCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

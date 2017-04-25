@@ -1,4 +1,4 @@
-# IO.Swagger.Api.URLApi
+# DataMill.Api.URLApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -19,9 +19,9 @@ Fetches the resource of a given url and checks if it is available. Only websites
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

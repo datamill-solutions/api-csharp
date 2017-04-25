@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PhoneFormatResponse
+# DataMill.Model.PhoneFormatResponse
 ## Properties
 
 Name | Type | Description | Notes

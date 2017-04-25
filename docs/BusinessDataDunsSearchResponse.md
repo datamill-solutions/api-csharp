@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BusinessDataDunsSearchResponse
+# DataMill.Model.BusinessDataDunsSearchResponse
 ## Properties
 
 Name | Type | Description | Notes

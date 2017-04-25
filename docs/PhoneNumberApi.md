@@ -1,4 +1,4 @@
-# IO.Swagger.Api.PhoneNumberApi
+# DataMill.Api.PhoneNumberApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -21,9 +21,9 @@ Real time validation of mobile numbers without triggering a call of send a text 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -89,9 +89,9 @@ Validates a given phone number and converts it to the canonical form. In additio
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -163,9 +163,9 @@ Resolves the national and international dial prefix for a country specified by t
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

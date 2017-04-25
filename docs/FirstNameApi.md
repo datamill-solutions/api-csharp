@@ -1,4 +1,4 @@
-# IO.Swagger.Api.FirstNameApi
+# DataMill.Api.FirstNameApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -19,9 +19,9 @@ Detects all first names in a given sting (e.g. a person's name) and extracts the
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

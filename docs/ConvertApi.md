@@ -1,4 +1,4 @@
-# IO.Swagger.Api.ConvertApi
+# DataMill.Api.ConvertApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -22,9 +22,9 @@ Changes any word of a given text so that the first letter is capitalized and all
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -88,9 +88,9 @@ Converts all letters of any word in a given string in the respective lowercase.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -154,9 +154,9 @@ Converts all letters of any word in a given string in the respective capital.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -220,9 +220,9 @@ Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

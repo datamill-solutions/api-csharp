@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BusinessDataUndeliverableContactsResponse
+# DataMill.Model.BusinessDataUndeliverableContactsResponse
 ## Properties
 
 Name | Type | Description | Notes

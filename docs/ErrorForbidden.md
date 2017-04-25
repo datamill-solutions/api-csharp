@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorForbidden
+# DataMill.Model.ErrorForbidden
 ## Properties
 
 Name | Type | Description | Notes

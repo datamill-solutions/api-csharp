@@ -1,4 +1,4 @@
-# IO.Swagger.Api.EmailApi
+# DataMill.Api.EmailApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -21,9 +21,9 @@ Checks the spelling of an email address to detect typos and spelling errors. In 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -87,9 +87,9 @@ Checks the spelling of an email address to detect typos and spelling errors. If 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -153,9 +153,9 @@ Checks the spelling of an email address to detect typos and spelling errors.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

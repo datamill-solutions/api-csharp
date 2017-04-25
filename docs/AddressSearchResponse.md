@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AddressSearchResponse
+# DataMill.Model.AddressSearchResponse
 ## Properties
 
 Name | Type | Description | Notes

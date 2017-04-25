@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PhoneMobileCheckResponse
+# DataMill.Model.PhoneMobileCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

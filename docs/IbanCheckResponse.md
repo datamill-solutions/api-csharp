@@ -1,4 +1,4 @@
-# IO.Swagger.Model.IbanCheckResponse
+# DataMill.Model.IbanCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

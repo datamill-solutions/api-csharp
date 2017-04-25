@@ -1,4 +1,4 @@
-# IO.Swagger.Api.IBANApi
+# DataMill.Api.IBANApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -19,9 +19,9 @@ Checks the spelling, country code and checksum of an IBAN (International Bank Ac
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConvertUpperCaseResponse
+# DataMill.Model.ConvertUpperCaseResponse
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorIncorrectParameters
+# DataMill.Model.ErrorIncorrectParameters
 ## Properties
 
 Name | Type | Description | Notes

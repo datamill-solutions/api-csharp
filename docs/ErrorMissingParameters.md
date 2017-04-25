@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorMissingParameters
+# DataMill.Model.ErrorMissingParameters
 ## Properties
 
 Name | Type | Description | Notes

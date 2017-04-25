@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EmailDomainCheckResponse
+# DataMill.Model.EmailDomainCheckResponse
 ## Properties
 
 Name | Type | Description | Notes
