@@ -24,7 +24,7 @@ limitations under the License.
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C089FA0-E891-478C-A9CD-38595FFEAFC3}</ProjectGuid>
+    <ProjectGuid>{C2CFCECB-4EAB-4597-A507-75D2AA34659D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataMill</RootNamespace>
