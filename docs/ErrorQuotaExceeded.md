@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorQuotaExceeded
+# DataMill.Model.ErrorQuotaExceeded
 ## Properties
 
 Name | Type | Description | Notes

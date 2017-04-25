@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorUnauthorized
+# DataMill.Model.ErrorUnauthorized
 ## Properties
 
 Name | Type | Description | Notes

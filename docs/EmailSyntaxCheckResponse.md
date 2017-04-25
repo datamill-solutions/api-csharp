@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EmailSyntaxCheckResponse
+# DataMill.Model.EmailSyntaxCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

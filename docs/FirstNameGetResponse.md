@@ -1,4 +1,4 @@
-# IO.Swagger.Model.FirstNameGetResponse
+# DataMill.Model.FirstNameGetResponse
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ErrorServiceUnavailable
+# DataMill.Model.ErrorServiceUnavailable
 ## Properties
 
 Name | Type | Description | Notes

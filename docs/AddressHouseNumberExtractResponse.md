@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AddressHouseNumberExtractResponse
+# DataMill.Model.AddressHouseNumberExtractResponse
 ## Properties
 
 Name | Type | Description | Notes

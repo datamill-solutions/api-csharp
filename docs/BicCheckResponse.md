@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BicCheckResponse
+# DataMill.Model.BicCheckResponse
 ## Properties
 
 Name | Type | Description | Notes

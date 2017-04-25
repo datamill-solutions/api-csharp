@@ -1,4 +1,4 @@
-# IO.Swagger.Api.DUNSApi
+# DataMill.Api.DUNSApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -21,9 +21,9 @@ Get marketing information about a company (credit rating, PAYDEX score, demograp
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -89,9 +89,9 @@ Resolves company information (official name, postal address, annual turnover, nu
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -157,9 +157,9 @@ Finds the D-U-N-S number and additional company information by the company's nam
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.GenderGetResponse
+# DataMill.Model.GenderGetResponse
 ## Properties
 
 Name | Type | Description | Notes

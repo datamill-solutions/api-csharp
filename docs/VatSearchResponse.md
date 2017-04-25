@@ -1,4 +1,4 @@
-# IO.Swagger.Model.VatSearchResponse
+# DataMill.Model.VatSearchResponse
 ## Properties
 
 Name | Type | Description | Notes

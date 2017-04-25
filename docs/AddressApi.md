@@ -1,4 +1,4 @@
-# IO.Swagger.Api.AddressApi
+# DataMill.Api.AddressApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -22,9 +22,9 @@ Find and extract the house number based on partial address information. The resu
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -90,9 +90,9 @@ Resolve an address corresponding to a given geo-coordinate. The result is a sing
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -160,9 +160,9 @@ Find geo-location based on unstructured (single-line entry, un-qualified) or bas
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -244,9 +244,9 @@ Find multiple geo-locations based on unstructured (single-line entry, un-qualifi
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

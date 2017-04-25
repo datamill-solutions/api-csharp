@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConvertWrapResponse
+# DataMill.Model.ConvertWrapResponse
 ## Properties
 
 Name | Type | Description | Notes

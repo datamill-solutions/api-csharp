@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConvertLowerCaseResponse
+# DataMill.Model.ConvertLowerCaseResponse
 ## Properties
 
 Name | Type | Description | Notes

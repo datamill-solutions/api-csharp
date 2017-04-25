@@ -14,14 +14,14 @@
 
 @echo off
 
-SET CSCPATH=%SYSTEMROOT%\Microsoft.NET\Framework\v4.0.30319
+SET CSCPATH=%SYSTEMROOT%\Microsoft.NET\Framework\v3.5
 
 if not exist ".\nuget.exe" powershell -Command "(new-object System.Net.WebClient).DownloadFile('https://nuget.org/nuget.exe', '.\nuget.exe')"
-.\nuget.exe install src\IO.Swagger\packages.config -o packages
+.\nuget.exe install src\DataMill\packages.config -o packages
 
 if not exist ".\bin" mkdir bin
 
-copy packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll bin\Newtonsoft.Json.dll
-copy packages\RestSharp.105.1.0\lib\net45\RestSharp.dll bin\RestSharp.dll
+copy packages\Newtonsoft.Json.8.0.3\lib\net35\Newtonsoft.Json.dll bin\Newtonsoft.Json.dll
+copy packages\RestSharp.105.1.0\lib\net35\RestSharp.dll bin\RestSharp.dll
 
-%CSCPATH%\csc /reference:bin\Newtonsoft.Json.dll;bin\RestSharp.dll /target:library /out:bin\IO.Swagger.dll /recurse:src\IO.Swagger\*.cs /doc:bin\IO.Swagger.xml
+%CSCPATH%\csc /reference:bin\Newtonsoft.Json.dll;bin\RestSharp.dll /target:library /out:bin\DataMill.dll /recurse:src\DataMill\*.cs /doc:bin\DataMill.xml

@@ -1,4 +1,4 @@
-# IO.Swagger.Api.BICApi
+# DataMill.Api.BICApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -19,9 +19,9 @@ Checks the spelling of a given BIC (Business Identifier Code), also known as SWI
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConvertCapitalFirstResponse
+# DataMill.Model.ConvertCapitalFirstResponse
 ## Properties
 
 Name | Type | Description | Notes

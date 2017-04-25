@@ -1,4 +1,4 @@
-# IO.Swagger.Api.VATApi
+# DataMill.Api.VATApi
 
 All URIs are relative to *https://api.methis.at*
 
@@ -21,9 +21,9 @@ Checks if a given VAT (Value Added Tax) identification number is valid or not. O
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -87,9 +87,9 @@ Resolves company information (company name and postal address) based on the comp
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
@@ -155,9 +155,9 @@ Finds the VAT number and additional company information by the company's name an
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
 
 namespace Example
 {
