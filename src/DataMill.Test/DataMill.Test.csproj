@@ -87,7 +87,7 @@ limitations under the License.
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\DataMill\DataMill.csproj">
-          <Project>{5D3036F9-E36B-433E-98C8-D16FEA7D5805}</Project>
+          <Project>{AEE1CE07-A753-4023-812F-3CE76BA05DC4}</Project>
           <Name>DataMill</Name>
       </ProjectReference>
   </ItemGroup>
