@@ -58,7 +58,7 @@ namespace DataMill.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/0.0.2/csharp"
+                             string userAgent = "Swagger-Codegen/1.6.5/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -93,7 +93,7 @@ namespace DataMill.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "0.0.2";
+        public const string Version = "1.6.5";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -330,7 +330,7 @@ namespace DataMill.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: 1.6.5\n";
-            report += "    SDK Package Version: 0.0.2\n";
+            report += "    SDK Package Version: 1.6.5\n";
 
             return report;
         }

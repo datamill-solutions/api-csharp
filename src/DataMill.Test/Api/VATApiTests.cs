@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void CheckVATTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string vatnumber = null;
-            //var response = instance.CheckVAT(license, guid, vatnumber);
+            //var response = instance.CheckVAT(vatnumber);
             //Assert.IsInstanceOf<VatCheckResponse> (response, "response is VatCheckResponse");
         }
         
@@ -97,11 +95,9 @@ namespace DataMill.Test
         public void ResolveVATTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string vatnumber = null;
             //string locale = null;
-            //var response = instance.ResolveVAT(license, guid, vatnumber, locale);
+            //var response = instance.ResolveVAT(vatnumber, locale);
             //Assert.IsInstanceOf<VatResolveResponse> (response, "response is VatResolveResponse");
         }
         
@@ -112,14 +108,12 @@ namespace DataMill.Test
         public void SearchVATTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string company = null;
             //string city = null;
             //string countryCode = null;
             //string limit = null;
             //string minScore = null;
-            //var response = instance.SearchVAT(license, guid, company, city, countryCode, limit, minScore);
+            //var response = instance.SearchVAT(company, city, countryCode, limit, minScore);
             //Assert.IsInstanceOf<VatSearchResponse> (response, "response is VatSearchResponse");
         }
         

@@ -1,6 +1,6 @@
 # DataMill.Api.EmailApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="checkemaildomain"></a>
 # **CheckEmailDomain**
-> EmailDomainCheckResponse CheckEmailDomain (string license, string guid, string email)
+> EmailDomainCheckResponse CheckEmailDomain (string email)
 
 Check email syntax and mail server domain
 
@@ -32,15 +32,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new EmailApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var email = email_example;  // string | The email address to be checked
 
             try
             {
                 // Check email syntax and mail server domain
-                EmailDomainCheckResponse result = apiInstance.CheckEmailDomain(license, guid, email);
+                EmailDomainCheckResponse result = apiInstance.CheckEmailDomain(email);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -56,8 +58,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **email** | **string**| The email address to be checked | 
 
 ### Return type
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -77,7 +77,7 @@ No authorization required
 
 <a name="checkemailmailbox"></a>
 # **CheckEmailMailbox**
-> EmailExtendedCheckResponse CheckEmailMailbox (string license, string guid, string email)
+> EmailExtendedCheckResponse CheckEmailMailbox (string email)
 
 Check email syntax, mail server domain and mailbox itself
 
@@ -98,15 +98,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new EmailApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var email = email_example;  // string | The email address to be checked
 
             try
             {
                 // Check email syntax, mail server domain and mailbox itself
-                EmailExtendedCheckResponse result = apiInstance.CheckEmailMailbox(license, guid, email);
+                EmailExtendedCheckResponse result = apiInstance.CheckEmailMailbox(email);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -122,8 +124,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **email** | **string**| The email address to be checked | 
 
 ### Return type
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -143,7 +143,7 @@ No authorization required
 
 <a name="checkemailsyntax"></a>
 # **CheckEmailSyntax**
-> EmailSyntaxCheckResponse CheckEmailSyntax (string license, string guid, string email)
+> EmailSyntaxCheckResponse CheckEmailSyntax (string email)
 
 Check email syntax
 
@@ -164,15 +164,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new EmailApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var email = email_example;  // string | The email address to be checked
 
             try
             {
                 // Check email syntax
-                EmailSyntaxCheckResponse result = apiInstance.CheckEmailSyntax(license, guid, email);
+                EmailSyntaxCheckResponse result = apiInstance.CheckEmailSyntax(email);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -188,8 +190,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **email** | **string**| The email address to be checked | 
 
 ### Return type
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

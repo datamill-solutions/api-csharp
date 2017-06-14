@@ -43,12 +43,10 @@ namespace DataMill.Api
         /// Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>BusinessDataDunsRatingResponse</returns>
-        BusinessDataDunsRatingResponse GetDUNSRating (string license, string guid, string dunsNumber, string reasonCode);
+        BusinessDataDunsRatingResponse GetDUNSRating (string dunsNumber, string reasonCode);
 
         /// <summary>
         /// Get marketing information by DUNS number
@@ -57,12 +55,10 @@ namespace DataMill.Api
         /// Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>ApiResponse of BusinessDataDunsRatingResponse</returns>
-        ApiResponse<BusinessDataDunsRatingResponse> GetDUNSRatingWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode);
+        ApiResponse<BusinessDataDunsRatingResponse> GetDUNSRatingWithHttpInfo (string dunsNumber, string reasonCode);
         /// <summary>
         /// Resolve company information by DUNS number
         /// </summary>
@@ -70,12 +66,10 @@ namespace DataMill.Api
         /// Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>BusinessDataDunsResolveResponse</returns>
-        BusinessDataDunsResolveResponse ResolveDUNS (string license, string guid, string dunsNumber, string reasonCode);
+        BusinessDataDunsResolveResponse ResolveDUNS (string dunsNumber, string reasonCode);
 
         /// <summary>
         /// Resolve company information by DUNS number
@@ -84,12 +78,10 @@ namespace DataMill.Api
         /// Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>ApiResponse of BusinessDataDunsResolveResponse</returns>
-        ApiResponse<BusinessDataDunsResolveResponse> ResolveDUNSWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode);
+        ApiResponse<BusinessDataDunsResolveResponse> ResolveDUNSWithHttpInfo (string dunsNumber, string reasonCode);
         /// <summary>
         /// Find DUNS number and company information by name
         /// </summary>
@@ -97,8 +89,6 @@ namespace DataMill.Api
         /// Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -107,7 +97,7 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>BusinessDataDunsSearchResponse</returns>
-        BusinessDataDunsSearchResponse SearchDUNS (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
+        BusinessDataDunsSearchResponse SearchDUNS (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
 
         /// <summary>
         /// Find DUNS number and company information by name
@@ -116,8 +106,6 @@ namespace DataMill.Api
         /// Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -126,7 +114,7 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>ApiResponse of BusinessDataDunsSearchResponse</returns>
-        ApiResponse<BusinessDataDunsSearchResponse> SearchDUNSWithHttpInfo (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
+        ApiResponse<BusinessDataDunsSearchResponse> SearchDUNSWithHttpInfo (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -136,12 +124,10 @@ namespace DataMill.Api
         /// Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of BusinessDataDunsRatingResponse</returns>
-        System.Threading.Tasks.Task<BusinessDataDunsRatingResponse> GetDUNSRatingAsync (string license, string guid, string dunsNumber, string reasonCode);
+        System.Threading.Tasks.Task<BusinessDataDunsRatingResponse> GetDUNSRatingAsync (string dunsNumber, string reasonCode);
 
         /// <summary>
         /// Get marketing information by DUNS number
@@ -150,12 +136,10 @@ namespace DataMill.Api
         /// Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of ApiResponse (BusinessDataDunsRatingResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsRatingResponse>> GetDUNSRatingAsyncWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode);
+        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsRatingResponse>> GetDUNSRatingAsyncWithHttpInfo (string dunsNumber, string reasonCode);
         /// <summary>
         /// Resolve company information by DUNS number
         /// </summary>
@@ -163,12 +147,10 @@ namespace DataMill.Api
         /// Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of BusinessDataDunsResolveResponse</returns>
-        System.Threading.Tasks.Task<BusinessDataDunsResolveResponse> ResolveDUNSAsync (string license, string guid, string dunsNumber, string reasonCode);
+        System.Threading.Tasks.Task<BusinessDataDunsResolveResponse> ResolveDUNSAsync (string dunsNumber, string reasonCode);
 
         /// <summary>
         /// Resolve company information by DUNS number
@@ -177,12 +159,10 @@ namespace DataMill.Api
         /// Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of ApiResponse (BusinessDataDunsResolveResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsResolveResponse>> ResolveDUNSAsyncWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode);
+        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsResolveResponse>> ResolveDUNSAsyncWithHttpInfo (string dunsNumber, string reasonCode);
         /// <summary>
         /// Find DUNS number and company information by name
         /// </summary>
@@ -190,8 +170,6 @@ namespace DataMill.Api
         /// Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -200,7 +178,7 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>Task of BusinessDataDunsSearchResponse</returns>
-        System.Threading.Tasks.Task<BusinessDataDunsSearchResponse> SearchDUNSAsync (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
+        System.Threading.Tasks.Task<BusinessDataDunsSearchResponse> SearchDUNSAsync (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
 
         /// <summary>
         /// Find DUNS number and company information by name
@@ -209,8 +187,6 @@ namespace DataMill.Api
         /// Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -219,7 +195,7 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>Task of ApiResponse (BusinessDataDunsSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsSearchResponse>> SearchDUNSAsyncWithHttpInfo (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
+        System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsSearchResponse>> SearchDUNSAsyncWithHttpInfo (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null);
         #endregion Asynchronous Operations
     }
 
@@ -336,14 +312,12 @@ namespace DataMill.Api
         /// Get marketing information by DUNS number Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>BusinessDataDunsRatingResponse</returns>
-        public BusinessDataDunsRatingResponse GetDUNSRating (string license, string guid, string dunsNumber, string reasonCode)
+        public BusinessDataDunsRatingResponse GetDUNSRating (string dunsNumber, string reasonCode)
         {
-             ApiResponse<BusinessDataDunsRatingResponse> localVarResponse = GetDUNSRatingWithHttpInfo(license, guid, dunsNumber, reasonCode);
+             ApiResponse<BusinessDataDunsRatingResponse> localVarResponse = GetDUNSRatingWithHttpInfo(dunsNumber, reasonCode);
              return localVarResponse.Data;
         }
 
@@ -351,19 +325,11 @@ namespace DataMill.Api
         /// Get marketing information by DUNS number Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>ApiResponse of BusinessDataDunsRatingResponse</returns>
-        public ApiResponse< BusinessDataDunsRatingResponse > GetDUNSRatingWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode)
+        public ApiResponse< BusinessDataDunsRatingResponse > GetDUNSRatingWithHttpInfo (string dunsNumber, string reasonCode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->GetDUNSRating");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->GetDUNSRating");
             // verify the required parameter 'dunsNumber' is set
             if (dunsNumber == null)
                 throw new ApiException(400, "Missing required parameter 'dunsNumber' when calling DUNSApi->GetDUNSRating");
@@ -396,10 +362,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
             if (reasonCode != null) localVarFormParams.Add("reason_code", Configuration.ApiClient.ParameterToString(reasonCode)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -425,14 +396,12 @@ namespace DataMill.Api
         /// Get marketing information by DUNS number Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of BusinessDataDunsRatingResponse</returns>
-        public async System.Threading.Tasks.Task<BusinessDataDunsRatingResponse> GetDUNSRatingAsync (string license, string guid, string dunsNumber, string reasonCode)
+        public async System.Threading.Tasks.Task<BusinessDataDunsRatingResponse> GetDUNSRatingAsync (string dunsNumber, string reasonCode)
         {
-             ApiResponse<BusinessDataDunsRatingResponse> localVarResponse = await GetDUNSRatingAsyncWithHttpInfo(license, guid, dunsNumber, reasonCode);
+             ApiResponse<BusinessDataDunsRatingResponse> localVarResponse = await GetDUNSRatingAsyncWithHttpInfo(dunsNumber, reasonCode);
              return localVarResponse.Data;
 
         }
@@ -441,19 +410,11 @@ namespace DataMill.Api
         /// Get marketing information by DUNS number Get marketing information about a company (credit rating, PAYDEX score, demographic information, ...) based on the company&#39;s D-U-N-S number. In order to get the marketing information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of ApiResponse (BusinessDataDunsRatingResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsRatingResponse>> GetDUNSRatingAsyncWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsRatingResponse>> GetDUNSRatingAsyncWithHttpInfo (string dunsNumber, string reasonCode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->GetDUNSRating");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->GetDUNSRating");
             // verify the required parameter 'dunsNumber' is set
             if (dunsNumber == null)
                 throw new ApiException(400, "Missing required parameter 'dunsNumber' when calling DUNSApi->GetDUNSRating");
@@ -486,11 +447,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
             if (reasonCode != null) localVarFormParams.Add("reason_code", Configuration.ApiClient.ParameterToString(reasonCode)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -515,14 +480,12 @@ namespace DataMill.Api
         /// Resolve company information by DUNS number Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>BusinessDataDunsResolveResponse</returns>
-        public BusinessDataDunsResolveResponse ResolveDUNS (string license, string guid, string dunsNumber, string reasonCode)
+        public BusinessDataDunsResolveResponse ResolveDUNS (string dunsNumber, string reasonCode)
         {
-             ApiResponse<BusinessDataDunsResolveResponse> localVarResponse = ResolveDUNSWithHttpInfo(license, guid, dunsNumber, reasonCode);
+             ApiResponse<BusinessDataDunsResolveResponse> localVarResponse = ResolveDUNSWithHttpInfo(dunsNumber, reasonCode);
              return localVarResponse.Data;
         }
 
@@ -530,19 +493,11 @@ namespace DataMill.Api
         /// Resolve company information by DUNS number Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>ApiResponse of BusinessDataDunsResolveResponse</returns>
-        public ApiResponse< BusinessDataDunsResolveResponse > ResolveDUNSWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode)
+        public ApiResponse< BusinessDataDunsResolveResponse > ResolveDUNSWithHttpInfo (string dunsNumber, string reasonCode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->ResolveDUNS");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->ResolveDUNS");
             // verify the required parameter 'dunsNumber' is set
             if (dunsNumber == null)
                 throw new ApiException(400, "Missing required parameter 'dunsNumber' when calling DUNSApi->ResolveDUNS");
@@ -575,10 +530,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
             if (reasonCode != null) localVarFormParams.Add("reason_code", Configuration.ApiClient.ParameterToString(reasonCode)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -604,14 +564,12 @@ namespace DataMill.Api
         /// Resolve company information by DUNS number Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of BusinessDataDunsResolveResponse</returns>
-        public async System.Threading.Tasks.Task<BusinessDataDunsResolveResponse> ResolveDUNSAsync (string license, string guid, string dunsNumber, string reasonCode)
+        public async System.Threading.Tasks.Task<BusinessDataDunsResolveResponse> ResolveDUNSAsync (string dunsNumber, string reasonCode)
         {
-             ApiResponse<BusinessDataDunsResolveResponse> localVarResponse = await ResolveDUNSAsyncWithHttpInfo(license, guid, dunsNumber, reasonCode);
+             ApiResponse<BusinessDataDunsResolveResponse> localVarResponse = await ResolveDUNSAsyncWithHttpInfo(dunsNumber, reasonCode);
              return localVarResponse.Data;
 
         }
@@ -620,19 +578,11 @@ namespace DataMill.Api
         /// Resolve company information by DUNS number Resolves company information (official name, postal address, annual turnover, number of employees, ...) based on  the company&#39;s D-U-N-S number. In order to get the company information each request requires a reason. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information</param>
         /// <param name="reasonCode">Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement </param>
         /// <returns>Task of ApiResponse (BusinessDataDunsResolveResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsResolveResponse>> ResolveDUNSAsyncWithHttpInfo (string license, string guid, string dunsNumber, string reasonCode)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsResolveResponse>> ResolveDUNSAsyncWithHttpInfo (string dunsNumber, string reasonCode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->ResolveDUNS");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->ResolveDUNS");
             // verify the required parameter 'dunsNumber' is set
             if (dunsNumber == null)
                 throw new ApiException(400, "Missing required parameter 'dunsNumber' when calling DUNSApi->ResolveDUNS");
@@ -665,11 +615,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
             if (reasonCode != null) localVarFormParams.Add("reason_code", Configuration.ApiClient.ParameterToString(reasonCode)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -694,8 +648,6 @@ namespace DataMill.Api
         /// Find DUNS number and company information by name Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -704,9 +656,9 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>BusinessDataDunsSearchResponse</returns>
-        public BusinessDataDunsSearchResponse SearchDUNS (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
+        public BusinessDataDunsSearchResponse SearchDUNS (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
         {
-             ApiResponse<BusinessDataDunsSearchResponse> localVarResponse = SearchDUNSWithHttpInfo(license, guid, countryCode, companyName, dunsNumber, state, city, zip, street);
+             ApiResponse<BusinessDataDunsSearchResponse> localVarResponse = SearchDUNSWithHttpInfo(countryCode, companyName, dunsNumber, state, city, zip, street);
              return localVarResponse.Data;
         }
 
@@ -714,8 +666,6 @@ namespace DataMill.Api
         /// Find DUNS number and company information by name Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -724,14 +674,8 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>ApiResponse of BusinessDataDunsSearchResponse</returns>
-        public ApiResponse< BusinessDataDunsSearchResponse > SearchDUNSWithHttpInfo (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
+        public ApiResponse< BusinessDataDunsSearchResponse > SearchDUNSWithHttpInfo (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->SearchDUNS");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->SearchDUNS");
             // verify the required parameter 'countryCode' is set
             if (countryCode == null)
                 throw new ApiException(400, "Missing required parameter 'countryCode' when calling DUNSApi->SearchDUNS");
@@ -761,8 +705,6 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (companyName != null) localVarFormParams.Add("company_name", Configuration.ApiClient.ParameterToString(companyName)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
@@ -770,6 +712,13 @@ namespace DataMill.Api
             if (city != null) localVarFormParams.Add("city", Configuration.ApiClient.ParameterToString(city)); // form parameter
             if (zip != null) localVarFormParams.Add("zip", Configuration.ApiClient.ParameterToString(zip)); // form parameter
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -795,8 +744,6 @@ namespace DataMill.Api
         /// Find DUNS number and company information by name Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -805,9 +752,9 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>Task of BusinessDataDunsSearchResponse</returns>
-        public async System.Threading.Tasks.Task<BusinessDataDunsSearchResponse> SearchDUNSAsync (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
+        public async System.Threading.Tasks.Task<BusinessDataDunsSearchResponse> SearchDUNSAsync (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
         {
-             ApiResponse<BusinessDataDunsSearchResponse> localVarResponse = await SearchDUNSAsyncWithHttpInfo(license, guid, countryCode, companyName, dunsNumber, state, city, zip, street);
+             ApiResponse<BusinessDataDunsSearchResponse> localVarResponse = await SearchDUNSAsyncWithHttpInfo(countryCode, companyName, dunsNumber, state, city, zip, street);
              return localVarResponse.Data;
 
         }
@@ -816,8 +763,6 @@ namespace DataMill.Api
         /// Find DUNS number and company information by name Finds the D-U-N-S number and additional company information by the company&#39;s name. Optionally a filter for the headquarters location can be added to get a more accurate response. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="companyName">The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional)</param>
         /// <param name="dunsNumber">The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional)</param>
@@ -826,14 +771,8 @@ namespace DataMill.Api
         /// <param name="zip">Filter to get only companies which matches the specified postal code (optional)</param>
         /// <param name="street">Filter to get only companies which matches the specified street (optional)</param>
         /// <returns>Task of ApiResponse (BusinessDataDunsSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsSearchResponse>> SearchDUNSAsyncWithHttpInfo (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataDunsSearchResponse>> SearchDUNSAsyncWithHttpInfo (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DUNSApi->SearchDUNS");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DUNSApi->SearchDUNS");
             // verify the required parameter 'countryCode' is set
             if (countryCode == null)
                 throw new ApiException(400, "Missing required parameter 'countryCode' when calling DUNSApi->SearchDUNS");
@@ -863,8 +802,6 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (companyName != null) localVarFormParams.Add("company_name", Configuration.ApiClient.ParameterToString(companyName)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
             if (dunsNumber != null) localVarFormParams.Add("duns_number", Configuration.ApiClient.ParameterToString(dunsNumber)); // form parameter
@@ -873,6 +810,12 @@ namespace DataMill.Api
             if (zip != null) localVarFormParams.Add("zip", Configuration.ApiClient.ParameterToString(zip)); // form parameter
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

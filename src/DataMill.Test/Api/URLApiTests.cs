@@ -83,11 +83,9 @@ namespace DataMill.Test
         public void CheckUrlTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string url = null;
             //string maxRedirects = null;
-            //var response = instance.CheckUrl(license, guid, url, maxRedirects);
+            //var response = instance.CheckUrl(url, maxRedirects);
             //Assert.IsInstanceOf<UrlCheckResponse> (response, "response is UrlCheckResponse");
         }
         

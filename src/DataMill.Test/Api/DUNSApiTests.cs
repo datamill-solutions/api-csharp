@@ -83,11 +83,9 @@ namespace DataMill.Test
         public void GetDUNSRatingTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string dunsNumber = null;
             //string reasonCode = null;
-            //var response = instance.GetDUNSRating(license, guid, dunsNumber, reasonCode);
+            //var response = instance.GetDUNSRating(dunsNumber, reasonCode);
             //Assert.IsInstanceOf<BusinessDataDunsRatingResponse> (response, "response is BusinessDataDunsRatingResponse");
         }
         
@@ -98,11 +96,9 @@ namespace DataMill.Test
         public void ResolveDUNSTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string dunsNumber = null;
             //string reasonCode = null;
-            //var response = instance.ResolveDUNS(license, guid, dunsNumber, reasonCode);
+            //var response = instance.ResolveDUNS(dunsNumber, reasonCode);
             //Assert.IsInstanceOf<BusinessDataDunsResolveResponse> (response, "response is BusinessDataDunsResolveResponse");
         }
         
@@ -113,8 +109,6 @@ namespace DataMill.Test
         public void SearchDUNSTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string countryCode = null;
             //string companyName = null;
             //string dunsNumber = null;
@@ -122,7 +116,7 @@ namespace DataMill.Test
             //string city = null;
             //string zip = null;
             //string street = null;
-            //var response = instance.SearchDUNS(license, guid, countryCode, companyName, dunsNumber, state, city, zip, street);
+            //var response = instance.SearchDUNS(countryCode, companyName, dunsNumber, state, city, zip, street);
             //Assert.IsInstanceOf<BusinessDataDunsSearchResponse> (response, "response is BusinessDataDunsSearchResponse");
         }
         

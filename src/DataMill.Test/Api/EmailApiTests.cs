@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void CheckEmailDomainTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string email = null;
-            //var response = instance.CheckEmailDomain(license, guid, email);
+            //var response = instance.CheckEmailDomain(email);
             //Assert.IsInstanceOf<EmailDomainCheckResponse> (response, "response is EmailDomainCheckResponse");
         }
         
@@ -97,10 +95,8 @@ namespace DataMill.Test
         public void CheckEmailMailboxTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string email = null;
-            //var response = instance.CheckEmailMailbox(license, guid, email);
+            //var response = instance.CheckEmailMailbox(email);
             //Assert.IsInstanceOf<EmailExtendedCheckResponse> (response, "response is EmailExtendedCheckResponse");
         }
         
@@ -111,10 +107,8 @@ namespace DataMill.Test
         public void CheckEmailSyntaxTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string email = null;
-            //var response = instance.CheckEmailSyntax(license, guid, email);
+            //var response = instance.CheckEmailSyntax(email);
             //Assert.IsInstanceOf<EmailSyntaxCheckResponse> (response, "response is EmailSyntaxCheckResponse");
         }
         

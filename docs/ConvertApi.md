@@ -1,6 +1,6 @@
 # DataMill.Api.ConvertApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**ConvertLowerCase**](ConvertApi.md#convertlowercase) | **POST** /convert/lowercase | Convert any string to lower case
 [**ConvertUpperCase**](ConvertApi.md#convertuppercase) | **POST** /convert/uppercase | Convert any string to upper case
 [**ConvertWrap**](ConvertApi.md#convertwrap) | **POST** /convert/wrap | Wrap text
+[**GetPhoneticCode**](ConvertApi.md#getphoneticcode) | **POST** /phonetic/code/get | Calculate phonetic codes of a given text
 
 
 <a name="convertcapitalfirst"></a>
 # **ConvertCapitalFirst**
-> ConvertCapitalFirstResponse ConvertCapitalFirst (string license, string guid, string text)
+> ConvertCapitalFirstResponse ConvertCapitalFirst (string text)
 
 Convert any string to capitalize words
 
@@ -33,15 +34,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new ConvertApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var text = text_example;  // string | Free-form text to be converted.
 
             try
             {
                 // Convert any string to capitalize words
-                ConvertCapitalFirstResponse result = apiInstance.ConvertCapitalFirst(license, guid, text);
+                ConvertCapitalFirstResponse result = apiInstance.ConvertCapitalFirst(text);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,8 +60,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **text** | **string**| Free-form text to be converted. | 
 
 ### Return type
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -78,7 +79,7 @@ No authorization required
 
 <a name="convertlowercase"></a>
 # **ConvertLowerCase**
-> ConvertLowerCaseResponse ConvertLowerCase (string license, string guid, string text)
+> ConvertLowerCaseResponse ConvertLowerCase (string text)
 
 Convert any string to lower case
 
@@ -99,15 +100,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new ConvertApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var text = text_example;  // string | Free-form text to be converted.
 
             try
             {
                 // Convert any string to lower case
-                ConvertLowerCaseResponse result = apiInstance.ConvertLowerCase(license, guid, text);
+                ConvertLowerCaseResponse result = apiInstance.ConvertLowerCase(text);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -123,8 +126,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **text** | **string**| Free-form text to be converted. | 
 
 ### Return type
@@ -133,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -144,7 +145,7 @@ No authorization required
 
 <a name="convertuppercase"></a>
 # **ConvertUpperCase**
-> ConvertUpperCaseResponse ConvertUpperCase (string license, string guid, string text)
+> ConvertUpperCaseResponse ConvertUpperCase (string text)
 
 Convert any string to upper case
 
@@ -165,15 +166,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new ConvertApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var text = text_example;  // string | Free-form text to be converted.
 
             try
             {
                 // Convert any string to upper case
-                ConvertUpperCaseResponse result = apiInstance.ConvertUpperCase(license, guid, text);
+                ConvertUpperCaseResponse result = apiInstance.ConvertUpperCase(text);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -189,8 +192,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **text** | **string**| Free-form text to be converted. | 
 
 ### Return type
@@ -199,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -210,7 +211,7 @@ No authorization required
 
 <a name="convertwrap"></a>
 # **ConvertWrap**
-> ConvertWrapResponse ConvertWrap (string license, string guid, string text, int? limit, string mode = null, string linebreak = null)
+> ConvertWrapResponse ConvertWrap (string text, int? limit, string mode = null, string linebreak = null)
 
 Wrap text
 
@@ -231,9 +232,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new ConvertApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var text = text_example;  // string | Fre-form text to be wrapped.
             var limit = 56;  // int? | The number of characters a linefeed will be inserted after (maximum character length per line).
             var mode = mode_example;  // string | The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional) 
@@ -242,7 +245,7 @@ namespace Example
             try
             {
                 // Wrap text
-                ConvertWrapResponse result = apiInstance.ConvertWrap(license, guid, text, limit, mode, linebreak);
+                ConvertWrapResponse result = apiInstance.ConvertWrap(text, limit, mode, linebreak);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -258,8 +261,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **text** | **string**| Fre-form text to be wrapped. | 
  **limit** | **int?**| The number of characters a linefeed will be inserted after (maximum character length per line). | 
  **mode** | **string**| The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  | [optional] 
@@ -271,7 +272,75 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getphoneticcode"></a>
+# **GetPhoneticCode**
+> PhoneticCodeGetResponse GetPhoneticCode (string text, int? phoneticAlgorithm = null)
+
+Calculate phonetic codes of a given text
+
+Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DataMill.Api;
+using DataMill.Client;
+using DataMill.Model;
+
+namespace Example
+{
+    public class GetPhoneticCodeExample
+    {
+        public void main()
+        {
+            
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
+            var apiInstance = new ConvertApi();
+            var text = text_example;  // string | The text which should be converted. Each word will be converted separatly and generate a single entry in the result. 
+            var phoneticAlgorithm = 56;  // int? | The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 = Soundex  * 2 = Colcogne Phonetic  * 3 = Metaphon  (optional) 
+
+            try
+            {
+                // Calculate phonetic codes of a given text
+                PhoneticCodeGetResponse result = apiInstance.GetPhoneticCode(text, phoneticAlgorithm);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConvertApi.GetPhoneticCode: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string**| The text which should be converted. Each word will be converted separatly and generate a single entry in the result.  | 
+ **phoneticAlgorithm** | **int?**| The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  | [optional] 
+
+### Return type
+
+[**PhoneticCodeGetResponse**](PhoneticCodeGetResponse.md)
+
+### Authorization
+
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

@@ -83,11 +83,9 @@ namespace DataMill.Test
         public void CheckMobilePhoneTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string phonenumber = null;
             //string countrycode = null;
-            //var response = instance.CheckMobilePhone(license, guid, phonenumber, countrycode);
+            //var response = instance.CheckMobilePhone(phonenumber, countrycode);
             //Assert.IsInstanceOf<PhoneMobileCheckResponse> (response, "response is PhoneMobileCheckResponse");
         }
         
@@ -98,14 +96,12 @@ namespace DataMill.Test
         public void FormatPhoneNumberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string phonenumber = null;
             //string countrycode = null;
             //string format = null;
             //string directDialingDelimiter = null;
             //string allowedDelimiters = null;
-            //var response = instance.FormatPhoneNumber(license, guid, phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
+            //var response = instance.FormatPhoneNumber(phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
             //Assert.IsInstanceOf<PhoneFormatResponse> (response, "response is PhoneFormatResponse");
         }
         
@@ -116,10 +112,8 @@ namespace DataMill.Test
         public void GetPhoneCountryCodeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string countrycode = null;
-            //var response = instance.GetPhoneCountryCode(license, guid, countrycode);
+            //var response = instance.GetPhoneCountryCode(countrycode);
             //Assert.IsInstanceOf<PhoneCountryCodeGetResponse> (response, "response is PhoneCountryCodeGetResponse");
         }
         

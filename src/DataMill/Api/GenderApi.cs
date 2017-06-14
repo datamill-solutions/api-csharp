@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>GenderGetResponse</returns>
-        GenderGetResponse GetGender (string license, string guid, string firstname);
+        GenderGetResponse GetGender (string firstname);
 
         /// <summary>
         /// Recognize gender by first name
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>ApiResponse of GenderGetResponse</returns>
-        ApiResponse<GenderGetResponse> GetGenderWithHttpInfo (string license, string guid, string firstname);
+        ApiResponse<GenderGetResponse> GetGenderWithHttpInfo (string firstname);
         /// <summary>
         /// Recognize gender by first name (advanced)
         /// </summary>
@@ -68,12 +64,10 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name considering country specific peculiarities.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>GenderExtendedGetResponse</returns>
-        GenderExtendedGetResponse GetGenderExtended (string license, string guid, string firstname, string countrycode);
+        GenderExtendedGetResponse GetGenderExtended (string firstname, string countrycode);
 
         /// <summary>
         /// Recognize gender by first name (advanced)
@@ -82,12 +76,10 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name considering country specific peculiarities.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of GenderExtendedGetResponse</returns>
-        ApiResponse<GenderExtendedGetResponse> GetGenderExtendedWithHttpInfo (string license, string guid, string firstname, string countrycode);
+        ApiResponse<GenderExtendedGetResponse> GetGenderExtendedWithHttpInfo (string firstname, string countrycode);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -97,11 +89,9 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>Task of GenderGetResponse</returns>
-        System.Threading.Tasks.Task<GenderGetResponse> GetGenderAsync (string license, string guid, string firstname);
+        System.Threading.Tasks.Task<GenderGetResponse> GetGenderAsync (string firstname);
 
         /// <summary>
         /// Recognize gender by first name
@@ -110,11 +100,9 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>Task of ApiResponse (GenderGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenderGetResponse>> GetGenderAsyncWithHttpInfo (string license, string guid, string firstname);
+        System.Threading.Tasks.Task<ApiResponse<GenderGetResponse>> GetGenderAsyncWithHttpInfo (string firstname);
         /// <summary>
         /// Recognize gender by first name (advanced)
         /// </summary>
@@ -122,12 +110,10 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name considering country specific peculiarities.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of GenderExtendedGetResponse</returns>
-        System.Threading.Tasks.Task<GenderExtendedGetResponse> GetGenderExtendedAsync (string license, string guid, string firstname, string countrycode);
+        System.Threading.Tasks.Task<GenderExtendedGetResponse> GetGenderExtendedAsync (string firstname, string countrycode);
 
         /// <summary>
         /// Recognize gender by first name (advanced)
@@ -136,12 +122,10 @@ namespace DataMill.Api
         /// Recognizes the gender of a given first name considering country specific peculiarities.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (GenderExtendedGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenderExtendedGetResponse>> GetGenderExtendedAsyncWithHttpInfo (string license, string guid, string firstname, string countrycode);
+        System.Threading.Tasks.Task<ApiResponse<GenderExtendedGetResponse>> GetGenderExtendedAsyncWithHttpInfo (string firstname, string countrycode);
         #endregion Asynchronous Operations
     }
 
@@ -258,13 +242,11 @@ namespace DataMill.Api
         /// Recognize gender by first name Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>GenderGetResponse</returns>
-        public GenderGetResponse GetGender (string license, string guid, string firstname)
+        public GenderGetResponse GetGender (string firstname)
         {
-             ApiResponse<GenderGetResponse> localVarResponse = GetGenderWithHttpInfo(license, guid, firstname);
+             ApiResponse<GenderGetResponse> localVarResponse = GetGenderWithHttpInfo(firstname);
              return localVarResponse.Data;
         }
 
@@ -272,18 +254,10 @@ namespace DataMill.Api
         /// Recognize gender by first name Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>ApiResponse of GenderGetResponse</returns>
-        public ApiResponse< GenderGetResponse > GetGenderWithHttpInfo (string license, string guid, string firstname)
+        public ApiResponse< GenderGetResponse > GetGenderWithHttpInfo (string firstname)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling GenderApi->GetGender");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling GenderApi->GetGender");
             // verify the required parameter 'firstname' is set
             if (firstname == null)
                 throw new ApiException(400, "Missing required parameter 'firstname' when calling GenderApi->GetGender");
@@ -313,9 +287,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstname != null) localVarFormParams.Add("firstname", Configuration.ApiClient.ParameterToString(firstname)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -341,13 +320,11 @@ namespace DataMill.Api
         /// Recognize gender by first name Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>Task of GenderGetResponse</returns>
-        public async System.Threading.Tasks.Task<GenderGetResponse> GetGenderAsync (string license, string guid, string firstname)
+        public async System.Threading.Tasks.Task<GenderGetResponse> GetGenderAsync (string firstname)
         {
-             ApiResponse<GenderGetResponse> localVarResponse = await GetGenderAsyncWithHttpInfo(license, guid, firstname);
+             ApiResponse<GenderGetResponse> localVarResponse = await GetGenderAsyncWithHttpInfo(firstname);
              return localVarResponse.Data;
 
         }
@@ -356,18 +333,10 @@ namespace DataMill.Api
         /// Recognize gender by first name Recognizes the gender of a given first name. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <returns>Task of ApiResponse (GenderGetResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenderGetResponse>> GetGenderAsyncWithHttpInfo (string license, string guid, string firstname)
+        public async System.Threading.Tasks.Task<ApiResponse<GenderGetResponse>> GetGenderAsyncWithHttpInfo (string firstname)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling GenderApi->GetGender");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling GenderApi->GetGender");
             // verify the required parameter 'firstname' is set
             if (firstname == null)
                 throw new ApiException(400, "Missing required parameter 'firstname' when calling GenderApi->GetGender");
@@ -397,10 +366,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstname != null) localVarFormParams.Add("firstname", Configuration.ApiClient.ParameterToString(firstname)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -425,14 +398,12 @@ namespace DataMill.Api
         /// Recognize gender by first name (advanced) Recognizes the gender of a given first name considering country specific peculiarities.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>GenderExtendedGetResponse</returns>
-        public GenderExtendedGetResponse GetGenderExtended (string license, string guid, string firstname, string countrycode)
+        public GenderExtendedGetResponse GetGenderExtended (string firstname, string countrycode)
         {
-             ApiResponse<GenderExtendedGetResponse> localVarResponse = GetGenderExtendedWithHttpInfo(license, guid, firstname, countrycode);
+             ApiResponse<GenderExtendedGetResponse> localVarResponse = GetGenderExtendedWithHttpInfo(firstname, countrycode);
              return localVarResponse.Data;
         }
 
@@ -440,19 +411,11 @@ namespace DataMill.Api
         /// Recognize gender by first name (advanced) Recognizes the gender of a given first name considering country specific peculiarities.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of GenderExtendedGetResponse</returns>
-        public ApiResponse< GenderExtendedGetResponse > GetGenderExtendedWithHttpInfo (string license, string guid, string firstname, string countrycode)
+        public ApiResponse< GenderExtendedGetResponse > GetGenderExtendedWithHttpInfo (string firstname, string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling GenderApi->GetGenderExtended");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling GenderApi->GetGenderExtended");
             // verify the required parameter 'firstname' is set
             if (firstname == null)
                 throw new ApiException(400, "Missing required parameter 'firstname' when calling GenderApi->GetGenderExtended");
@@ -485,10 +448,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstname != null) localVarFormParams.Add("firstname", Configuration.ApiClient.ParameterToString(firstname)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -514,14 +482,12 @@ namespace DataMill.Api
         /// Recognize gender by first name (advanced) Recognizes the gender of a given first name considering country specific peculiarities.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of GenderExtendedGetResponse</returns>
-        public async System.Threading.Tasks.Task<GenderExtendedGetResponse> GetGenderExtendedAsync (string license, string guid, string firstname, string countrycode)
+        public async System.Threading.Tasks.Task<GenderExtendedGetResponse> GetGenderExtendedAsync (string firstname, string countrycode)
         {
-             ApiResponse<GenderExtendedGetResponse> localVarResponse = await GetGenderExtendedAsyncWithHttpInfo(license, guid, firstname, countrycode);
+             ApiResponse<GenderExtendedGetResponse> localVarResponse = await GetGenderExtendedAsyncWithHttpInfo(firstname, countrycode);
              return localVarResponse.Data;
 
         }
@@ -530,19 +496,11 @@ namespace DataMill.Api
         /// Recognize gender by first name (advanced) Recognizes the gender of a given first name considering country specific peculiarities.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstname">First name to recognize gender.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (GenderExtendedGetResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenderExtendedGetResponse>> GetGenderExtendedAsyncWithHttpInfo (string license, string guid, string firstname, string countrycode)
+        public async System.Threading.Tasks.Task<ApiResponse<GenderExtendedGetResponse>> GetGenderExtendedAsyncWithHttpInfo (string firstname, string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling GenderApi->GetGenderExtended");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling GenderApi->GetGenderExtended");
             // verify the required parameter 'firstname' is set
             if (firstname == null)
                 throw new ApiException(400, "Missing required parameter 'firstname' when calling GenderApi->GetGenderExtended");
@@ -575,11 +533,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstname != null) localVarFormParams.Add("firstname", Configuration.ApiClient.ParameterToString(firstname)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

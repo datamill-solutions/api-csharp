@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>VatCheckResponse</returns>
-        VatCheckResponse CheckVAT (string license, string guid, string vatnumber);
+        VatCheckResponse CheckVAT (string vatnumber);
 
         /// <summary>
         /// Check vat number for correctness
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>ApiResponse of VatCheckResponse</returns>
-        ApiResponse<VatCheckResponse> CheckVATWithHttpInfo (string license, string guid, string vatnumber);
+        ApiResponse<VatCheckResponse> CheckVATWithHttpInfo (string vatnumber);
         /// <summary>
         /// Try to resolve VAT number to company information
         /// </summary>
@@ -68,12 +64,10 @@ namespace DataMill.Api
         /// Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>VatResolveResponse</returns>
-        VatResolveResponse ResolveVAT (string license, string guid, string vatnumber, string locale = null);
+        VatResolveResponse ResolveVAT (string vatnumber, string locale = null);
 
         /// <summary>
         /// Try to resolve VAT number to company information
@@ -82,12 +76,10 @@ namespace DataMill.Api
         /// Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of VatResolveResponse</returns>
-        ApiResponse<VatResolveResponse> ResolveVATWithHttpInfo (string license, string guid, string vatnumber, string locale = null);
+        ApiResponse<VatResolveResponse> ResolveVATWithHttpInfo (string vatnumber, string locale = null);
         /// <summary>
         /// Find VAT number and company information by name
         /// </summary>
@@ -95,15 +87,13 @@ namespace DataMill.Api
         /// Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>VatSearchResponse</returns>
-        VatSearchResponse SearchVAT (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
+        VatSearchResponse SearchVAT (string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
 
         /// <summary>
         /// Find VAT number and company information by name
@@ -112,15 +102,13 @@ namespace DataMill.Api
         /// Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>ApiResponse of VatSearchResponse</returns>
-        ApiResponse<VatSearchResponse> SearchVATWithHttpInfo (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
+        ApiResponse<VatSearchResponse> SearchVATWithHttpInfo (string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -130,11 +118,9 @@ namespace DataMill.Api
         /// Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>Task of VatCheckResponse</returns>
-        System.Threading.Tasks.Task<VatCheckResponse> CheckVATAsync (string license, string guid, string vatnumber);
+        System.Threading.Tasks.Task<VatCheckResponse> CheckVATAsync (string vatnumber);
 
         /// <summary>
         /// Check vat number for correctness
@@ -143,11 +129,9 @@ namespace DataMill.Api
         /// Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>Task of ApiResponse (VatCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VatCheckResponse>> CheckVATAsyncWithHttpInfo (string license, string guid, string vatnumber);
+        System.Threading.Tasks.Task<ApiResponse<VatCheckResponse>> CheckVATAsyncWithHttpInfo (string vatnumber);
         /// <summary>
         /// Try to resolve VAT number to company information
         /// </summary>
@@ -155,12 +139,10 @@ namespace DataMill.Api
         /// Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of VatResolveResponse</returns>
-        System.Threading.Tasks.Task<VatResolveResponse> ResolveVATAsync (string license, string guid, string vatnumber, string locale = null);
+        System.Threading.Tasks.Task<VatResolveResponse> ResolveVATAsync (string vatnumber, string locale = null);
 
         /// <summary>
         /// Try to resolve VAT number to company information
@@ -169,12 +151,10 @@ namespace DataMill.Api
         /// Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (VatResolveResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VatResolveResponse>> ResolveVATAsyncWithHttpInfo (string license, string guid, string vatnumber, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<VatResolveResponse>> ResolveVATAsyncWithHttpInfo (string vatnumber, string locale = null);
         /// <summary>
         /// Find VAT number and company information by name
         /// </summary>
@@ -182,15 +162,13 @@ namespace DataMill.Api
         /// Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>Task of VatSearchResponse</returns>
-        System.Threading.Tasks.Task<VatSearchResponse> SearchVATAsync (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
+        System.Threading.Tasks.Task<VatSearchResponse> SearchVATAsync (string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
 
         /// <summary>
         /// Find VAT number and company information by name
@@ -199,15 +177,13 @@ namespace DataMill.Api
         /// Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>Task of ApiResponse (VatSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VatSearchResponse>> SearchVATAsyncWithHttpInfo (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
+        System.Threading.Tasks.Task<ApiResponse<VatSearchResponse>> SearchVATAsyncWithHttpInfo (string company, string city = null, string countryCode = null, string limit = null, string minScore = null);
         #endregion Asynchronous Operations
     }
 
@@ -324,13 +300,11 @@ namespace DataMill.Api
         /// Check vat number for correctness Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>VatCheckResponse</returns>
-        public VatCheckResponse CheckVAT (string license, string guid, string vatnumber)
+        public VatCheckResponse CheckVAT (string vatnumber)
         {
-             ApiResponse<VatCheckResponse> localVarResponse = CheckVATWithHttpInfo(license, guid, vatnumber);
+             ApiResponse<VatCheckResponse> localVarResponse = CheckVATWithHttpInfo(vatnumber);
              return localVarResponse.Data;
         }
 
@@ -338,18 +312,10 @@ namespace DataMill.Api
         /// Check vat number for correctness Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>ApiResponse of VatCheckResponse</returns>
-        public ApiResponse< VatCheckResponse > CheckVATWithHttpInfo (string license, string guid, string vatnumber)
+        public ApiResponse< VatCheckResponse > CheckVATWithHttpInfo (string vatnumber)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->CheckVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->CheckVAT");
             // verify the required parameter 'vatnumber' is set
             if (vatnumber == null)
                 throw new ApiException(400, "Missing required parameter 'vatnumber' when calling VATApi->CheckVAT");
@@ -379,9 +345,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (vatnumber != null) localVarFormParams.Add("vatnumber", Configuration.ApiClient.ParameterToString(vatnumber)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -407,13 +378,11 @@ namespace DataMill.Api
         /// Check vat number for correctness Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>Task of VatCheckResponse</returns>
-        public async System.Threading.Tasks.Task<VatCheckResponse> CheckVATAsync (string license, string guid, string vatnumber)
+        public async System.Threading.Tasks.Task<VatCheckResponse> CheckVATAsync (string vatnumber)
         {
-             ApiResponse<VatCheckResponse> localVarResponse = await CheckVATAsyncWithHttpInfo(license, guid, vatnumber);
+             ApiResponse<VatCheckResponse> localVarResponse = await CheckVATAsyncWithHttpInfo(vatnumber);
              return localVarResponse.Data;
 
         }
@@ -422,18 +391,10 @@ namespace DataMill.Api
         /// Check vat number for correctness Checks if a given VAT (Value Added Tax) identification number is valid or not. Only VAT numbers of companies within the European Union can be verified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <returns>Task of ApiResponse (VatCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<VatCheckResponse>> CheckVATAsyncWithHttpInfo (string license, string guid, string vatnumber)
+        public async System.Threading.Tasks.Task<ApiResponse<VatCheckResponse>> CheckVATAsyncWithHttpInfo (string vatnumber)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->CheckVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->CheckVAT");
             // verify the required parameter 'vatnumber' is set
             if (vatnumber == null)
                 throw new ApiException(400, "Missing required parameter 'vatnumber' when calling VATApi->CheckVAT");
@@ -463,10 +424,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (vatnumber != null) localVarFormParams.Add("vatnumber", Configuration.ApiClient.ParameterToString(vatnumber)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -491,14 +456,12 @@ namespace DataMill.Api
         /// Try to resolve VAT number to company information Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>VatResolveResponse</returns>
-        public VatResolveResponse ResolveVAT (string license, string guid, string vatnumber, string locale = null)
+        public VatResolveResponse ResolveVAT (string vatnumber, string locale = null)
         {
-             ApiResponse<VatResolveResponse> localVarResponse = ResolveVATWithHttpInfo(license, guid, vatnumber, locale);
+             ApiResponse<VatResolveResponse> localVarResponse = ResolveVATWithHttpInfo(vatnumber, locale);
              return localVarResponse.Data;
         }
 
@@ -506,19 +469,11 @@ namespace DataMill.Api
         /// Try to resolve VAT number to company information Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of VatResolveResponse</returns>
-        public ApiResponse< VatResolveResponse > ResolveVATWithHttpInfo (string license, string guid, string vatnumber, string locale = null)
+        public ApiResponse< VatResolveResponse > ResolveVATWithHttpInfo (string vatnumber, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->ResolveVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->ResolveVAT");
             // verify the required parameter 'vatnumber' is set
             if (vatnumber == null)
                 throw new ApiException(400, "Missing required parameter 'vatnumber' when calling VATApi->ResolveVAT");
@@ -548,10 +503,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (vatnumber != null) localVarFormParams.Add("vatnumber", Configuration.ApiClient.ParameterToString(vatnumber)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -577,14 +537,12 @@ namespace DataMill.Api
         /// Try to resolve VAT number to company information Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of VatResolveResponse</returns>
-        public async System.Threading.Tasks.Task<VatResolveResponse> ResolveVATAsync (string license, string guid, string vatnumber, string locale = null)
+        public async System.Threading.Tasks.Task<VatResolveResponse> ResolveVATAsync (string vatnumber, string locale = null)
         {
-             ApiResponse<VatResolveResponse> localVarResponse = await ResolveVATAsyncWithHttpInfo(license, guid, vatnumber, locale);
+             ApiResponse<VatResolveResponse> localVarResponse = await ResolveVATAsyncWithHttpInfo(vatnumber, locale);
              return localVarResponse.Data;
 
         }
@@ -593,19 +551,11 @@ namespace DataMill.Api
         /// Try to resolve VAT number to company information Resolves company information (company name and postal address) based on the company&#39;s VAT (Value Added Tax) identification number. Only VAT numbers of companies within the European Union can be verified and resolved. Some countries have access restrictions and may not deliver the full company information. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="vatnumber">The VAT number of a company within the European Union</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (VatResolveResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<VatResolveResponse>> ResolveVATAsyncWithHttpInfo (string license, string guid, string vatnumber, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<VatResolveResponse>> ResolveVATAsyncWithHttpInfo (string vatnumber, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->ResolveVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->ResolveVAT");
             // verify the required parameter 'vatnumber' is set
             if (vatnumber == null)
                 throw new ApiException(400, "Missing required parameter 'vatnumber' when calling VATApi->ResolveVAT");
@@ -635,11 +585,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (vatnumber != null) localVarFormParams.Add("vatnumber", Configuration.ApiClient.ParameterToString(vatnumber)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -664,17 +618,15 @@ namespace DataMill.Api
         /// Find VAT number and company information by name Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>VatSearchResponse</returns>
-        public VatSearchResponse SearchVAT (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
+        public VatSearchResponse SearchVAT (string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
         {
-             ApiResponse<VatSearchResponse> localVarResponse = SearchVATWithHttpInfo(license, guid, company, city, countryCode, limit, minScore);
+             ApiResponse<VatSearchResponse> localVarResponse = SearchVATWithHttpInfo(company, city, countryCode, limit, minScore);
              return localVarResponse.Data;
         }
 
@@ -682,22 +634,14 @@ namespace DataMill.Api
         /// Find VAT number and company information by name Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>ApiResponse of VatSearchResponse</returns>
-        public ApiResponse< VatSearchResponse > SearchVATWithHttpInfo (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
+        public ApiResponse< VatSearchResponse > SearchVATWithHttpInfo (string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->SearchVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->SearchVAT");
             // verify the required parameter 'company' is set
             if (company == null)
                 throw new ApiException(400, "Missing required parameter 'company' when calling VATApi->SearchVAT");
@@ -727,13 +671,18 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (company != null) localVarFormParams.Add("company", Configuration.ApiClient.ParameterToString(company)); // form parameter
             if (city != null) localVarFormParams.Add("city", Configuration.ApiClient.ParameterToString(city)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
             if (limit != null) localVarFormParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // form parameter
             if (minScore != null) localVarFormParams.Add("min_score", Configuration.ApiClient.ParameterToString(minScore)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -759,17 +708,15 @@ namespace DataMill.Api
         /// Find VAT number and company information by name Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>Task of VatSearchResponse</returns>
-        public async System.Threading.Tasks.Task<VatSearchResponse> SearchVATAsync (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
+        public async System.Threading.Tasks.Task<VatSearchResponse> SearchVATAsync (string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
         {
-             ApiResponse<VatSearchResponse> localVarResponse = await SearchVATAsyncWithHttpInfo(license, guid, company, city, countryCode, limit, minScore);
+             ApiResponse<VatSearchResponse> localVarResponse = await SearchVATAsyncWithHttpInfo(company, city, countryCode, limit, minScore);
              return localVarResponse.Data;
 
         }
@@ -778,22 +725,14 @@ namespace DataMill.Api
         /// Find VAT number and company information by name Finds the VAT number and additional company information by the company&#39;s name and headquarters location. The function returns multiple results if similar companies are found in the same city. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="company">The name of an company. You may enter the fully qualified name or only partial information.</param>
         /// <param name="city">The city where the company&#39;s headquarters is located. (optional)</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional)</param>
         /// <param name="limit">The maximum amount of results returned if multiple companies are found. Default value is **10**.  (optional, default to 10)</param>
         /// <param name="minScore">Threshold to set the minimum score rate of results being returned. Default: **0.8**  (optional, default to 0.8)</param>
         /// <returns>Task of ApiResponse (VatSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<VatSearchResponse>> SearchVATAsyncWithHttpInfo (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
+        public async System.Threading.Tasks.Task<ApiResponse<VatSearchResponse>> SearchVATAsyncWithHttpInfo (string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling VATApi->SearchVAT");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling VATApi->SearchVAT");
             // verify the required parameter 'company' is set
             if (company == null)
                 throw new ApiException(400, "Missing required parameter 'company' when calling VATApi->SearchVAT");
@@ -823,14 +762,18 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (company != null) localVarFormParams.Add("company", Configuration.ApiClient.ParameterToString(company)); // form parameter
             if (city != null) localVarFormParams.Add("city", Configuration.ApiClient.ParameterToString(city)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
             if (limit != null) localVarFormParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // form parameter
             if (minScore != null) localVarFormParams.Add("min_score", Configuration.ApiClient.ParameterToString(minScore)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -60,17 +60,17 @@ namespace DataMill.Client
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://api.methis.at).
+        /// with default configuration and base path (https://api-beta.methis.at).
         /// </summary>
         public ApiClient()
         {
             Configuration = Configuration.Default;
-            RestClient = new RestClient("https://api.methis.at");
+            RestClient = new RestClient("https://api-beta.methis.at");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://api.methis.at).
+        /// with default base path (https://api-beta.methis.at).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config = null)
@@ -80,7 +80,7 @@ namespace DataMill.Client
             else
                 Configuration = config;
 
-            RestClient = new RestClient("https://api.methis.at");
+            RestClient = new RestClient("https://api-beta.methis.at");
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace DataMill.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://api.methis.at")
+        public ApiClient(String basePath = "https://api-beta.methis.at")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

@@ -1,6 +1,6 @@
 # DataMill.Api.GenderApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getgender"></a>
 # **GetGender**
-> GenderGetResponse GetGender (string license, string guid, string firstname)
+> GenderGetResponse GetGender (string firstname)
 
 Recognize gender by first name
 
@@ -31,15 +31,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new GenderApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var firstname = firstname_example;  // string | First name to recognize gender.
 
             try
             {
                 // Recognize gender by first name
-                GenderGetResponse result = apiInstance.GetGender(license, guid, firstname);
+                GenderGetResponse result = apiInstance.GetGender(firstname);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -55,8 +57,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **firstname** | **string**| First name to recognize gender. | 
 
 ### Return type
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -76,7 +76,7 @@ No authorization required
 
 <a name="getgenderextended"></a>
 # **GetGenderExtended**
-> GenderExtendedGetResponse GetGenderExtended (string license, string guid, string firstname, string countrycode)
+> GenderExtendedGetResponse GetGenderExtended (string firstname, string countrycode)
 
 Recognize gender by first name (advanced)
 
@@ -97,16 +97,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new GenderApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var firstname = firstname_example;  // string | First name to recognize gender.
             var countrycode = countrycode_example;  // string | ISO 3166-1 alpha-2 country code e.g. 'US'. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.
 
             try
             {
                 // Recognize gender by first name (advanced)
-                GenderExtendedGetResponse result = apiInstance.GetGenderExtended(license, guid, firstname, countrycode);
+                GenderExtendedGetResponse result = apiInstance.GetGenderExtended(firstname, countrycode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -122,8 +124,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **firstname** | **string**| First name to recognize gender. | 
  **countrycode** | **string**| ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information. | 
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

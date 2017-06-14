@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>SocialMediaActivitiesGetResponse</returns>
-        SocialMediaActivitiesGetResponse GetSocialMediaActivities (string license, string guid, string email);
+        SocialMediaActivitiesGetResponse GetSocialMediaActivities (string email);
 
         /// <summary>
         /// Retrieve social media data by email address
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>ApiResponse of SocialMediaActivitiesGetResponse</returns>
-        ApiResponse<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesWithHttpInfo (string license, string guid, string email);
+        ApiResponse<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesWithHttpInfo (string email);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -70,11 +66,9 @@ namespace DataMill.Api
         /// Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>Task of SocialMediaActivitiesGetResponse</returns>
-        System.Threading.Tasks.Task<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesAsync (string license, string guid, string email);
+        System.Threading.Tasks.Task<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesAsync (string email);
 
         /// <summary>
         /// Retrieve social media data by email address
@@ -83,11 +77,9 @@ namespace DataMill.Api
         /// Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>Task of ApiResponse (SocialMediaActivitiesGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SocialMediaActivitiesGetResponse>> GetSocialMediaActivitiesAsyncWithHttpInfo (string license, string guid, string email);
+        System.Threading.Tasks.Task<ApiResponse<SocialMediaActivitiesGetResponse>> GetSocialMediaActivitiesAsyncWithHttpInfo (string email);
         #endregion Asynchronous Operations
     }
 
@@ -204,13 +196,11 @@ namespace DataMill.Api
         /// Retrieve social media data by email address Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>SocialMediaActivitiesGetResponse</returns>
-        public SocialMediaActivitiesGetResponse GetSocialMediaActivities (string license, string guid, string email)
+        public SocialMediaActivitiesGetResponse GetSocialMediaActivities (string email)
         {
-             ApiResponse<SocialMediaActivitiesGetResponse> localVarResponse = GetSocialMediaActivitiesWithHttpInfo(license, guid, email);
+             ApiResponse<SocialMediaActivitiesGetResponse> localVarResponse = GetSocialMediaActivitiesWithHttpInfo(email);
              return localVarResponse.Data;
         }
 
@@ -218,18 +208,10 @@ namespace DataMill.Api
         /// Retrieve social media data by email address Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>ApiResponse of SocialMediaActivitiesGetResponse</returns>
-        public ApiResponse< SocialMediaActivitiesGetResponse > GetSocialMediaActivitiesWithHttpInfo (string license, string guid, string email)
+        public ApiResponse< SocialMediaActivitiesGetResponse > GetSocialMediaActivitiesWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling SocialMediaApi->GetSocialMediaActivities");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling SocialMediaApi->GetSocialMediaActivities");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling SocialMediaApi->GetSocialMediaActivities");
@@ -259,9 +241,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -287,13 +274,11 @@ namespace DataMill.Api
         /// Retrieve social media data by email address Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>Task of SocialMediaActivitiesGetResponse</returns>
-        public async System.Threading.Tasks.Task<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesAsync (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<SocialMediaActivitiesGetResponse> GetSocialMediaActivitiesAsync (string email)
         {
-             ApiResponse<SocialMediaActivitiesGetResponse> localVarResponse = await GetSocialMediaActivitiesAsyncWithHttpInfo(license, guid, email);
+             ApiResponse<SocialMediaActivitiesGetResponse> localVarResponse = await GetSocialMediaActivitiesAsyncWithHttpInfo(email);
              return localVarResponse.Data;
 
         }
@@ -302,18 +287,10 @@ namespace DataMill.Api
         /// Retrieve social media data by email address Get the number of followers and account information of multiple social media platforms from individual email addresses. If the social media information for a specific email address aren&#39;t fetched yet the request will be queued and the data will be available within the next 12 hours. Please consider that the response of a social media platform may be empty because of restricted access (privacy setting of the person being checked). The following social media platforms are currently checked:  * **LinkedIn**  * **XING**  * **Facebook**  * **Twitter**  * **Pinterest**  * **Instagram**  * **Youtube**  * **Google Plus**  * **Klout** 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The person&#39;s email address being checked on mentioned social media plattforms</param>
         /// <returns>Task of ApiResponse (SocialMediaActivitiesGetResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SocialMediaActivitiesGetResponse>> GetSocialMediaActivitiesAsyncWithHttpInfo (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<ApiResponse<SocialMediaActivitiesGetResponse>> GetSocialMediaActivitiesAsyncWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling SocialMediaApi->GetSocialMediaActivities");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling SocialMediaApi->GetSocialMediaActivities");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling SocialMediaApi->GetSocialMediaActivities");
@@ -343,10 +320,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

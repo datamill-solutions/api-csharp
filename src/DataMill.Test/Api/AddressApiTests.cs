@@ -83,11 +83,9 @@ namespace DataMill.Test
         public void ExtractHouseNumberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string street = null;
             //string housenumber = null;
-            //var response = instance.ExtractHouseNumber(license, guid, street, housenumber);
+            //var response = instance.ExtractHouseNumber(street, housenumber);
             //Assert.IsInstanceOf<AddressHouseNumberExtractResponse> (response, "response is AddressHouseNumberExtractResponse");
         }
         
@@ -98,12 +96,10 @@ namespace DataMill.Test
         public void LocateAddressTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string latitude = null;
             //string longitude = null;
             //string locale = null;
-            //var response = instance.LocateAddress(license, guid, latitude, longitude, locale);
+            //var response = instance.LocateAddress(latitude, longitude, locale);
             //Assert.IsInstanceOf<AddressSearchResponse> (response, "response is AddressSearchResponse");
         }
         
@@ -114,8 +110,6 @@ namespace DataMill.Test
         public void SearchAddressTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string address = null;
             //string country = null;
             //string state = null;
@@ -126,7 +120,7 @@ namespace DataMill.Test
             //string street = null;
             //string housenumber = null;
             //string locale = null;
-            //var response = instance.SearchAddress(license, guid, address, country, state, county, city, zip, district, street, housenumber, locale);
+            //var response = instance.SearchAddress(address, country, state, county, city, zip, district, street, housenumber, locale);
             //Assert.IsInstanceOf<AddressSearchResponse> (response, "response is AddressSearchResponse");
         }
         
@@ -137,11 +131,9 @@ namespace DataMill.Test
         public void SearchAddressMultipleTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string address = null;
             //string locale = null;
-            //var response = instance.SearchAddressMultiple(license, guid, address, locale);
+            //var response = instance.SearchAddressMultiple(address, locale);
             //Assert.IsInstanceOf<AddressSearchMultipleResponse> (response, "response is AddressSearchMultipleResponse");
         }
         

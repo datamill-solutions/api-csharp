@@ -1,6 +1,6 @@
 # DataMill.Api.PhoneNumberApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="checkmobilephone"></a>
 # **CheckMobilePhone**
-> PhoneMobileCheckResponse CheckMobilePhone (string license, string guid, string phonenumber, string countrycode)
+> PhoneMobileCheckResponse CheckMobilePhone (string phonenumber, string countrycode)
 
 Verify mobile phone number
 
@@ -32,16 +32,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new PhoneNumberApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var phonenumber = phonenumber_example;  // string | Mobile phone number to be verified.
             var countrycode = countrycode_example;  // string | ISO 3166-1 alpha-2 country code e.g. 'US'. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.
 
             try
             {
                 // Verify mobile phone number
-                PhoneMobileCheckResponse result = apiInstance.CheckMobilePhone(license, guid, phonenumber, countrycode);
+                PhoneMobileCheckResponse result = apiInstance.CheckMobilePhone(phonenumber, countrycode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,8 +59,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **phonenumber** | **string**| Mobile phone number to be verified. | 
  **countrycode** | **string**| ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information. | 
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -79,7 +79,7 @@ No authorization required
 
 <a name="formatphonenumber"></a>
 # **FormatPhoneNumber**
-> PhoneFormatResponse FormatPhoneNumber (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
+> PhoneFormatResponse FormatPhoneNumber (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
 
 Parse, format and validate phone numbers
 
@@ -100,9 +100,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new PhoneNumberApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var phonenumber = phonenumber_example;  // string | Phone number to be formatted and validated
             var countrycode = countrycode_example;  // string | ISO 3166-1 alpha-2 country code e.g. 'US'. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.
             var format = format_example;  // string | The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\"+\\\" sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional) 
@@ -112,7 +114,7 @@ namespace Example
             try
             {
                 // Parse, format and validate phone numbers
-                PhoneFormatResponse result = apiInstance.FormatPhoneNumber(license, guid, phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
+                PhoneFormatResponse result = apiInstance.FormatPhoneNumber(phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,8 +130,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **phonenumber** | **string**| Phone number to be formatted and validated | 
  **countrycode** | **string**| ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information. | 
  **format** | **string**| The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  | [optional] 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="getphonecountrycode"></a>
 # **GetPhoneCountryCode**
-> PhoneCountryCodeGetResponse GetPhoneCountryCode (string license, string guid, string countrycode)
+> PhoneCountryCodeGetResponse GetPhoneCountryCode (string countrycode)
 
 International and national dial prefix
 
@@ -174,15 +174,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new PhoneNumberApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var countrycode = countrycode_example;  // string | ISO 3166-1 alpha-2 country code e.g. 'US'. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.
 
             try
             {
                 // International and national dial prefix
-                PhoneCountryCodeGetResponse result = apiInstance.GetPhoneCountryCode(license, guid, countrycode);
+                PhoneCountryCodeGetResponse result = apiInstance.GetPhoneCountryCode(countrycode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -198,8 +200,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **countrycode** | **string**| ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information. | 
 
 ### Return type
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

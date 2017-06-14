@@ -1,6 +1,6 @@
 # DataMill.Api.IBANApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="checkiban"></a>
 # **CheckIBAN**
-> IbanCheckResponse CheckIBAN (string license, string guid, string iban)
+> IbanCheckResponse CheckIBAN (string iban)
 
 Check IBAN for spelling
 
@@ -30,15 +30,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new IBANApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var iban = iban_example;  // string | IBAN to be checked.
 
             try
             {
                 // Check IBAN for spelling
-                IbanCheckResponse result = apiInstance.CheckIBAN(license, guid, iban);
+                IbanCheckResponse result = apiInstance.CheckIBAN(iban);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,8 +56,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **iban** | **string**| IBAN to be checked. | 
 
 ### Return type
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

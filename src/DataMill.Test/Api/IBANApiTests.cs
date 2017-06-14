@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void CheckIBANTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string iban = null;
-            //var response = instance.CheckIBAN(license, guid, iban);
+            //var response = instance.CheckIBAN(iban);
             //Assert.IsInstanceOf<IbanCheckResponse> (response, "response is IbanCheckResponse");
         }
         

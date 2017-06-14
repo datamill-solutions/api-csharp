@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>FirstNameGetResponse</returns>
-        FirstNameGetResponse GetFirstNames (string license, string guid, string name);
+        FirstNameGetResponse GetFirstNames (string name);
 
         /// <summary>
         /// Recognize and extract first names
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>ApiResponse of FirstNameGetResponse</returns>
-        ApiResponse<FirstNameGetResponse> GetFirstNamesWithHttpInfo (string license, string guid, string name);
+        ApiResponse<FirstNameGetResponse> GetFirstNamesWithHttpInfo (string name);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -70,11 +66,9 @@ namespace DataMill.Api
         /// Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>Task of FirstNameGetResponse</returns>
-        System.Threading.Tasks.Task<FirstNameGetResponse> GetFirstNamesAsync (string license, string guid, string name);
+        System.Threading.Tasks.Task<FirstNameGetResponse> GetFirstNamesAsync (string name);
 
         /// <summary>
         /// Recognize and extract first names
@@ -83,11 +77,9 @@ namespace DataMill.Api
         /// Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>Task of ApiResponse (FirstNameGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FirstNameGetResponse>> GetFirstNamesAsyncWithHttpInfo (string license, string guid, string name);
+        System.Threading.Tasks.Task<ApiResponse<FirstNameGetResponse>> GetFirstNamesAsyncWithHttpInfo (string name);
         #endregion Asynchronous Operations
     }
 
@@ -204,13 +196,11 @@ namespace DataMill.Api
         /// Recognize and extract first names Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>FirstNameGetResponse</returns>
-        public FirstNameGetResponse GetFirstNames (string license, string guid, string name)
+        public FirstNameGetResponse GetFirstNames (string name)
         {
-             ApiResponse<FirstNameGetResponse> localVarResponse = GetFirstNamesWithHttpInfo(license, guid, name);
+             ApiResponse<FirstNameGetResponse> localVarResponse = GetFirstNamesWithHttpInfo(name);
              return localVarResponse.Data;
         }
 
@@ -218,18 +208,10 @@ namespace DataMill.Api
         /// Recognize and extract first names Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>ApiResponse of FirstNameGetResponse</returns>
-        public ApiResponse< FirstNameGetResponse > GetFirstNamesWithHttpInfo (string license, string guid, string name)
+        public ApiResponse< FirstNameGetResponse > GetFirstNamesWithHttpInfo (string name)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling FirstNameApi->GetFirstNames");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling FirstNameApi->GetFirstNames");
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling FirstNameApi->GetFirstNames");
@@ -259,9 +241,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -287,13 +274,11 @@ namespace DataMill.Api
         /// Recognize and extract first names Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>Task of FirstNameGetResponse</returns>
-        public async System.Threading.Tasks.Task<FirstNameGetResponse> GetFirstNamesAsync (string license, string guid, string name)
+        public async System.Threading.Tasks.Task<FirstNameGetResponse> GetFirstNamesAsync (string name)
         {
-             ApiResponse<FirstNameGetResponse> localVarResponse = await GetFirstNamesAsyncWithHttpInfo(license, guid, name);
+             ApiResponse<FirstNameGetResponse> localVarResponse = await GetFirstNamesAsyncWithHttpInfo(name);
              return localVarResponse.Data;
 
         }
@@ -302,18 +287,10 @@ namespace DataMill.Api
         /// Recognize and extract first names Detects all first names in a given sting (e.g. a person&#39;s name) and extracts them. (Works only with common first names in Germany, Austria and Switzerland) 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="name">Full name to detect all first names and extract them</param>
         /// <returns>Task of ApiResponse (FirstNameGetResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FirstNameGetResponse>> GetFirstNamesAsyncWithHttpInfo (string license, string guid, string name)
+        public async System.Threading.Tasks.Task<ApiResponse<FirstNameGetResponse>> GetFirstNamesAsyncWithHttpInfo (string name)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling FirstNameApi->GetFirstNames");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling FirstNameApi->GetFirstNames");
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling FirstNameApi->GetFirstNames");
@@ -343,10 +320,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>BicCheckResponse</returns>
-        BicCheckResponse CheckBIC (string license, string guid, string bic);
+        BicCheckResponse CheckBIC (string bic);
 
         /// <summary>
         /// Check BIC for spelling
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>ApiResponse of BicCheckResponse</returns>
-        ApiResponse<BicCheckResponse> CheckBICWithHttpInfo (string license, string guid, string bic);
+        ApiResponse<BicCheckResponse> CheckBICWithHttpInfo (string bic);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -70,11 +66,9 @@ namespace DataMill.Api
         /// Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>Task of BicCheckResponse</returns>
-        System.Threading.Tasks.Task<BicCheckResponse> CheckBICAsync (string license, string guid, string bic);
+        System.Threading.Tasks.Task<BicCheckResponse> CheckBICAsync (string bic);
 
         /// <summary>
         /// Check BIC for spelling
@@ -83,11 +77,9 @@ namespace DataMill.Api
         /// Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>Task of ApiResponse (BicCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BicCheckResponse>> CheckBICAsyncWithHttpInfo (string license, string guid, string bic);
+        System.Threading.Tasks.Task<ApiResponse<BicCheckResponse>> CheckBICAsyncWithHttpInfo (string bic);
         #endregion Asynchronous Operations
     }
 
@@ -204,13 +196,11 @@ namespace DataMill.Api
         /// Check BIC for spelling Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>BicCheckResponse</returns>
-        public BicCheckResponse CheckBIC (string license, string guid, string bic)
+        public BicCheckResponse CheckBIC (string bic)
         {
-             ApiResponse<BicCheckResponse> localVarResponse = CheckBICWithHttpInfo(license, guid, bic);
+             ApiResponse<BicCheckResponse> localVarResponse = CheckBICWithHttpInfo(bic);
              return localVarResponse.Data;
         }
 
@@ -218,18 +208,10 @@ namespace DataMill.Api
         /// Check BIC for spelling Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>ApiResponse of BicCheckResponse</returns>
-        public ApiResponse< BicCheckResponse > CheckBICWithHttpInfo (string license, string guid, string bic)
+        public ApiResponse< BicCheckResponse > CheckBICWithHttpInfo (string bic)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling BICApi->CheckBIC");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling BICApi->CheckBIC");
             // verify the required parameter 'bic' is set
             if (bic == null)
                 throw new ApiException(400, "Missing required parameter 'bic' when calling BICApi->CheckBIC");
@@ -259,9 +241,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (bic != null) localVarFormParams.Add("bic", Configuration.ApiClient.ParameterToString(bic)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -287,13 +274,11 @@ namespace DataMill.Api
         /// Check BIC for spelling Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>Task of BicCheckResponse</returns>
-        public async System.Threading.Tasks.Task<BicCheckResponse> CheckBICAsync (string license, string guid, string bic)
+        public async System.Threading.Tasks.Task<BicCheckResponse> CheckBICAsync (string bic)
         {
-             ApiResponse<BicCheckResponse> localVarResponse = await CheckBICAsyncWithHttpInfo(license, guid, bic);
+             ApiResponse<BicCheckResponse> localVarResponse = await CheckBICAsyncWithHttpInfo(bic);
              return localVarResponse.Data;
 
         }
@@ -302,18 +287,10 @@ namespace DataMill.Api
         /// Check BIC for spelling Checks the spelling of a given BIC (Business Identifier Code), also known as SWIFT code which is defined in the ISO 9362. The function does not verify if the BIC really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="bic">BIC to be checked</param>
         /// <returns>Task of ApiResponse (BicCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BicCheckResponse>> CheckBICAsyncWithHttpInfo (string license, string guid, string bic)
+        public async System.Threading.Tasks.Task<ApiResponse<BicCheckResponse>> CheckBICAsyncWithHttpInfo (string bic)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling BICApi->CheckBIC");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling BICApi->CheckBIC");
             // verify the required parameter 'bic' is set
             if (bic == null)
                 throw new ApiException(400, "Missing required parameter 'bic' when calling BICApi->CheckBIC");
@@ -343,10 +320,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (bic != null) localVarFormParams.Add("bic", Configuration.ApiClient.ParameterToString(bic)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

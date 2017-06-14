@@ -1,6 +1,6 @@
 # DataMill.Api.SocialMediaApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getsocialmediaactivities"></a>
 # **GetSocialMediaActivities**
-> SocialMediaActivitiesGetResponse GetSocialMediaActivities (string license, string guid, string email)
+> SocialMediaActivitiesGetResponse GetSocialMediaActivities (string email)
 
 Retrieve social media data by email address
 
@@ -30,15 +30,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new SocialMediaApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var email = email_example;  // string | The person's email address being checked on mentioned social media plattforms
 
             try
             {
                 // Retrieve social media data by email address
-                SocialMediaActivitiesGetResponse result = apiInstance.GetSocialMediaActivities(license, guid, email);
+                SocialMediaActivitiesGetResponse result = apiInstance.GetSocialMediaActivities(email);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,8 +56,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **email** | **string**| The person&#39;s email address being checked on mentioned social media plattforms | 
 
 ### Return type
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
