@@ -43,8 +43,6 @@ namespace DataMill.Api
         /// Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -52,7 +50,7 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>BusinessDataUndeliverableContactsResponse</returns>
-        BusinessDataUndeliverableContactsResponse SearchUndeliverableContact (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason);
+        BusinessDataUndeliverableContactsResponse SearchUndeliverableContact (string firstName, string lastName, string countryCode, string zip, string street, string reason);
 
         /// <summary>
         /// Find moved and deceased contacts
@@ -61,8 +59,6 @@ namespace DataMill.Api
         /// Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -70,7 +66,7 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>ApiResponse of BusinessDataUndeliverableContactsResponse</returns>
-        ApiResponse<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactWithHttpInfo (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason);
+        ApiResponse<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactWithHttpInfo (string firstName, string lastName, string countryCode, string zip, string street, string reason);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -80,8 +76,6 @@ namespace DataMill.Api
         /// Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -89,7 +83,7 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>Task of BusinessDataUndeliverableContactsResponse</returns>
-        System.Threading.Tasks.Task<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactAsync (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason);
+        System.Threading.Tasks.Task<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactAsync (string firstName, string lastName, string countryCode, string zip, string street, string reason);
 
         /// <summary>
         /// Find moved and deceased contacts
@@ -98,8 +92,6 @@ namespace DataMill.Api
         /// Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -107,7 +99,7 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>Task of ApiResponse (BusinessDataUndeliverableContactsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BusinessDataUndeliverableContactsResponse>> SearchUndeliverableContactAsyncWithHttpInfo (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason);
+        System.Threading.Tasks.Task<ApiResponse<BusinessDataUndeliverableContactsResponse>> SearchUndeliverableContactAsyncWithHttpInfo (string firstName, string lastName, string countryCode, string zip, string street, string reason);
         #endregion Asynchronous Operations
     }
 
@@ -224,8 +216,6 @@ namespace DataMill.Api
         /// Find moved and deceased contacts Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -233,9 +223,9 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>BusinessDataUndeliverableContactsResponse</returns>
-        public BusinessDataUndeliverableContactsResponse SearchUndeliverableContact (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason)
+        public BusinessDataUndeliverableContactsResponse SearchUndeliverableContact (string firstName, string lastName, string countryCode, string zip, string street, string reason)
         {
-             ApiResponse<BusinessDataUndeliverableContactsResponse> localVarResponse = SearchUndeliverableContactWithHttpInfo(license, guid, firstName, lastName, countryCode, zip, street, reason);
+             ApiResponse<BusinessDataUndeliverableContactsResponse> localVarResponse = SearchUndeliverableContactWithHttpInfo(firstName, lastName, countryCode, zip, street, reason);
              return localVarResponse.Data;
         }
 
@@ -243,8 +233,6 @@ namespace DataMill.Api
         /// Find moved and deceased contacts Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -252,14 +240,8 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>ApiResponse of BusinessDataUndeliverableContactsResponse</returns>
-        public ApiResponse< BusinessDataUndeliverableContactsResponse > SearchUndeliverableContactWithHttpInfo (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason)
+        public ApiResponse< BusinessDataUndeliverableContactsResponse > SearchUndeliverableContactWithHttpInfo (string firstName, string lastName, string countryCode, string zip, string street, string reason)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DeliveryInformationApi->SearchUndeliverableContact");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DeliveryInformationApi->SearchUndeliverableContact");
             // verify the required parameter 'firstName' is set
             if (firstName == null)
                 throw new ApiException(400, "Missing required parameter 'firstName' when calling DeliveryInformationApi->SearchUndeliverableContact");
@@ -304,14 +286,19 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstName != null) localVarFormParams.Add("first_name", Configuration.ApiClient.ParameterToString(firstName)); // form parameter
             if (lastName != null) localVarFormParams.Add("last_name", Configuration.ApiClient.ParameterToString(lastName)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
             if (zip != null) localVarFormParams.Add("zip", Configuration.ApiClient.ParameterToString(zip)); // form parameter
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
             if (reason != null) localVarFormParams.Add("reason", Configuration.ApiClient.ParameterToString(reason)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -337,8 +324,6 @@ namespace DataMill.Api
         /// Find moved and deceased contacts Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -346,9 +331,9 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>Task of BusinessDataUndeliverableContactsResponse</returns>
-        public async System.Threading.Tasks.Task<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactAsync (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason)
+        public async System.Threading.Tasks.Task<BusinessDataUndeliverableContactsResponse> SearchUndeliverableContactAsync (string firstName, string lastName, string countryCode, string zip, string street, string reason)
         {
-             ApiResponse<BusinessDataUndeliverableContactsResponse> localVarResponse = await SearchUndeliverableContactAsyncWithHttpInfo(license, guid, firstName, lastName, countryCode, zip, street, reason);
+             ApiResponse<BusinessDataUndeliverableContactsResponse> localVarResponse = await SearchUndeliverableContactAsyncWithHttpInfo(firstName, lastName, countryCode, zip, street, reason);
              return localVarResponse.Data;
 
         }
@@ -357,8 +342,6 @@ namespace DataMill.Api
         /// Find moved and deceased contacts Checks if the postal address of a person identified by its full name is invalid (moved to a new address or deceased). This function does NOT verify/check if a known postal address is still valid, instead it only checks if the person is moved to another address or is deceased and therefore a mail will result in an undeliverable state. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="firstName">The person&#39;s first name</param>
         /// <param name="lastName">The person&#39;s last name</param>
         /// <param name="countryCode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
@@ -366,14 +349,8 @@ namespace DataMill.Api
         /// <param name="street">Last known street name the person lives in</param>
         /// <param name="reason">Free-form text written in english why you submit the query.</param>
         /// <returns>Task of ApiResponse (BusinessDataUndeliverableContactsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataUndeliverableContactsResponse>> SearchUndeliverableContactAsyncWithHttpInfo (string license, string guid, string firstName, string lastName, string countryCode, string zip, string street, string reason)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessDataUndeliverableContactsResponse>> SearchUndeliverableContactAsyncWithHttpInfo (string firstName, string lastName, string countryCode, string zip, string street, string reason)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling DeliveryInformationApi->SearchUndeliverableContact");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling DeliveryInformationApi->SearchUndeliverableContact");
             // verify the required parameter 'firstName' is set
             if (firstName == null)
                 throw new ApiException(400, "Missing required parameter 'firstName' when calling DeliveryInformationApi->SearchUndeliverableContact");
@@ -418,8 +395,6 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (firstName != null) localVarFormParams.Add("first_name", Configuration.ApiClient.ParameterToString(firstName)); // form parameter
             if (lastName != null) localVarFormParams.Add("last_name", Configuration.ApiClient.ParameterToString(lastName)); // form parameter
             if (countryCode != null) localVarFormParams.Add("country_code", Configuration.ApiClient.ParameterToString(countryCode)); // form parameter
@@ -427,6 +402,12 @@ namespace DataMill.Api
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
             if (reason != null) localVarFormParams.Add("reason", Configuration.ApiClient.ParameterToString(reason)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

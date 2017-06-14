@@ -83,15 +83,13 @@ namespace DataMill.Test
         public void SearchUndeliverableContactTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string firstName = null;
             //string lastName = null;
             //string countryCode = null;
             //string zip = null;
             //string street = null;
             //string reason = null;
-            //var response = instance.SearchUndeliverableContact(license, guid, firstName, lastName, countryCode, zip, street, reason);
+            //var response = instance.SearchUndeliverableContact(firstName, lastName, countryCode, zip, street, reason);
             //Assert.IsInstanceOf<BusinessDataUndeliverableContactsResponse> (response, "response is BusinessDataUndeliverableContactsResponse");
         }
         

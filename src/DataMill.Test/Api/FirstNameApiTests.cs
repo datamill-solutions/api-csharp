@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void GetFirstNamesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string name = null;
-            //var response = instance.GetFirstNames(license, guid, name);
+            //var response = instance.GetFirstNames(name);
             //Assert.IsInstanceOf<FirstNameGetResponse> (response, "response is FirstNameGetResponse");
         }
         

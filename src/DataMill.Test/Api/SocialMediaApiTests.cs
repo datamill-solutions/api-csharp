@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void GetSocialMediaActivitiesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string email = null;
-            //var response = instance.GetSocialMediaActivities(license, guid, email);
+            //var response = instance.GetSocialMediaActivities(email);
             //Assert.IsInstanceOf<SocialMediaActivitiesGetResponse> (response, "response is SocialMediaActivitiesGetResponse");
         }
         

@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailDomainCheckResponse</returns>
-        EmailDomainCheckResponse CheckEmailDomain (string license, string guid, string email);
+        EmailDomainCheckResponse CheckEmailDomain (string email);
 
         /// <summary>
         /// Check email syntax and mail server domain
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailDomainCheckResponse</returns>
-        ApiResponse<EmailDomainCheckResponse> CheckEmailDomainWithHttpInfo (string license, string guid, string email);
+        ApiResponse<EmailDomainCheckResponse> CheckEmailDomainWithHttpInfo (string email);
         /// <summary>
         /// Check email syntax, mail server domain and mailbox itself
         /// </summary>
@@ -68,11 +64,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailExtendedCheckResponse</returns>
-        EmailExtendedCheckResponse CheckEmailMailbox (string license, string guid, string email);
+        EmailExtendedCheckResponse CheckEmailMailbox (string email);
 
         /// <summary>
         /// Check email syntax, mail server domain and mailbox itself
@@ -81,11 +75,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailExtendedCheckResponse</returns>
-        ApiResponse<EmailExtendedCheckResponse> CheckEmailMailboxWithHttpInfo (string license, string guid, string email);
+        ApiResponse<EmailExtendedCheckResponse> CheckEmailMailboxWithHttpInfo (string email);
         /// <summary>
         /// Check email syntax
         /// </summary>
@@ -93,11 +85,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailSyntaxCheckResponse</returns>
-        EmailSyntaxCheckResponse CheckEmailSyntax (string license, string guid, string email);
+        EmailSyntaxCheckResponse CheckEmailSyntax (string email);
 
         /// <summary>
         /// Check email syntax
@@ -106,11 +96,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailSyntaxCheckResponse</returns>
-        ApiResponse<EmailSyntaxCheckResponse> CheckEmailSyntaxWithHttpInfo (string license, string guid, string email);
+        ApiResponse<EmailSyntaxCheckResponse> CheckEmailSyntaxWithHttpInfo (string email);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -120,11 +108,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailDomainCheckResponse</returns>
-        System.Threading.Tasks.Task<EmailDomainCheckResponse> CheckEmailDomainAsync (string license, string guid, string email);
+        System.Threading.Tasks.Task<EmailDomainCheckResponse> CheckEmailDomainAsync (string email);
 
         /// <summary>
         /// Check email syntax and mail server domain
@@ -133,11 +119,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailDomainCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailDomainCheckResponse>> CheckEmailDomainAsyncWithHttpInfo (string license, string guid, string email);
+        System.Threading.Tasks.Task<ApiResponse<EmailDomainCheckResponse>> CheckEmailDomainAsyncWithHttpInfo (string email);
         /// <summary>
         /// Check email syntax, mail server domain and mailbox itself
         /// </summary>
@@ -145,11 +129,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailExtendedCheckResponse</returns>
-        System.Threading.Tasks.Task<EmailExtendedCheckResponse> CheckEmailMailboxAsync (string license, string guid, string email);
+        System.Threading.Tasks.Task<EmailExtendedCheckResponse> CheckEmailMailboxAsync (string email);
 
         /// <summary>
         /// Check email syntax, mail server domain and mailbox itself
@@ -158,11 +140,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailExtendedCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailExtendedCheckResponse>> CheckEmailMailboxAsyncWithHttpInfo (string license, string guid, string email);
+        System.Threading.Tasks.Task<ApiResponse<EmailExtendedCheckResponse>> CheckEmailMailboxAsyncWithHttpInfo (string email);
         /// <summary>
         /// Check email syntax
         /// </summary>
@@ -170,11 +150,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailSyntaxCheckResponse</returns>
-        System.Threading.Tasks.Task<EmailSyntaxCheckResponse> CheckEmailSyntaxAsync (string license, string guid, string email);
+        System.Threading.Tasks.Task<EmailSyntaxCheckResponse> CheckEmailSyntaxAsync (string email);
 
         /// <summary>
         /// Check email syntax
@@ -183,11 +161,9 @@ namespace DataMill.Api
         /// Checks the spelling of an email address to detect typos and spelling errors. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailSyntaxCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EmailSyntaxCheckResponse>> CheckEmailSyntaxAsyncWithHttpInfo (string license, string guid, string email);
+        System.Threading.Tasks.Task<ApiResponse<EmailSyntaxCheckResponse>> CheckEmailSyntaxAsyncWithHttpInfo (string email);
         #endregion Asynchronous Operations
     }
 
@@ -304,13 +280,11 @@ namespace DataMill.Api
         /// Check email syntax and mail server domain Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailDomainCheckResponse</returns>
-        public EmailDomainCheckResponse CheckEmailDomain (string license, string guid, string email)
+        public EmailDomainCheckResponse CheckEmailDomain (string email)
         {
-             ApiResponse<EmailDomainCheckResponse> localVarResponse = CheckEmailDomainWithHttpInfo(license, guid, email);
+             ApiResponse<EmailDomainCheckResponse> localVarResponse = CheckEmailDomainWithHttpInfo(email);
              return localVarResponse.Data;
         }
 
@@ -318,18 +292,10 @@ namespace DataMill.Api
         /// Check email syntax and mail server domain Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailDomainCheckResponse</returns>
-        public ApiResponse< EmailDomainCheckResponse > CheckEmailDomainWithHttpInfo (string license, string guid, string email)
+        public ApiResponse< EmailDomainCheckResponse > CheckEmailDomainWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailDomain");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailDomain");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailDomain");
@@ -359,9 +325,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -387,13 +358,11 @@ namespace DataMill.Api
         /// Check email syntax and mail server domain Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailDomainCheckResponse</returns>
-        public async System.Threading.Tasks.Task<EmailDomainCheckResponse> CheckEmailDomainAsync (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<EmailDomainCheckResponse> CheckEmailDomainAsync (string email)
         {
-             ApiResponse<EmailDomainCheckResponse> localVarResponse = await CheckEmailDomainAsyncWithHttpInfo(license, guid, email);
+             ApiResponse<EmailDomainCheckResponse> localVarResponse = await CheckEmailDomainAsyncWithHttpInfo(email);
              return localVarResponse.Data;
 
         }
@@ -402,18 +371,10 @@ namespace DataMill.Api
         /// Check email syntax and mail server domain Checks the spelling of an email address to detect typos and spelling errors. In addition if the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailDomainCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EmailDomainCheckResponse>> CheckEmailDomainAsyncWithHttpInfo (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<ApiResponse<EmailDomainCheckResponse>> CheckEmailDomainAsyncWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailDomain");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailDomain");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailDomain");
@@ -443,10 +404,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -471,13 +436,11 @@ namespace DataMill.Api
         /// Check email syntax, mail server domain and mailbox itself Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailExtendedCheckResponse</returns>
-        public EmailExtendedCheckResponse CheckEmailMailbox (string license, string guid, string email)
+        public EmailExtendedCheckResponse CheckEmailMailbox (string email)
         {
-             ApiResponse<EmailExtendedCheckResponse> localVarResponse = CheckEmailMailboxWithHttpInfo(license, guid, email);
+             ApiResponse<EmailExtendedCheckResponse> localVarResponse = CheckEmailMailboxWithHttpInfo(email);
              return localVarResponse.Data;
         }
 
@@ -485,18 +448,10 @@ namespace DataMill.Api
         /// Check email syntax, mail server domain and mailbox itself Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailExtendedCheckResponse</returns>
-        public ApiResponse< EmailExtendedCheckResponse > CheckEmailMailboxWithHttpInfo (string license, string guid, string email)
+        public ApiResponse< EmailExtendedCheckResponse > CheckEmailMailboxWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailMailbox");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailMailbox");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailMailbox");
@@ -526,9 +481,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -554,13 +514,11 @@ namespace DataMill.Api
         /// Check email syntax, mail server domain and mailbox itself Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailExtendedCheckResponse</returns>
-        public async System.Threading.Tasks.Task<EmailExtendedCheckResponse> CheckEmailMailboxAsync (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<EmailExtendedCheckResponse> CheckEmailMailboxAsync (string email)
         {
-             ApiResponse<EmailExtendedCheckResponse> localVarResponse = await CheckEmailMailboxAsyncWithHttpInfo(license, guid, email);
+             ApiResponse<EmailExtendedCheckResponse> localVarResponse = await CheckEmailMailboxAsyncWithHttpInfo(email);
              return localVarResponse.Data;
 
         }
@@ -569,18 +527,10 @@ namespace DataMill.Api
         /// Check email syntax, mail server domain and mailbox itself Checks the spelling of an email address to detect typos and spelling errors. If the email address has a valid syntax its mail server is determined and checked for existence. The mail server itself will be compared with a list of disposable providers to detect addresses with a short lifetime. Additionally the mail server will be checked if an email for the given mailbox can be received. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailExtendedCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EmailExtendedCheckResponse>> CheckEmailMailboxAsyncWithHttpInfo (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<ApiResponse<EmailExtendedCheckResponse>> CheckEmailMailboxAsyncWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailMailbox");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailMailbox");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailMailbox");
@@ -610,10 +560,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -638,13 +592,11 @@ namespace DataMill.Api
         /// Check email syntax Checks the spelling of an email address to detect typos and spelling errors. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>EmailSyntaxCheckResponse</returns>
-        public EmailSyntaxCheckResponse CheckEmailSyntax (string license, string guid, string email)
+        public EmailSyntaxCheckResponse CheckEmailSyntax (string email)
         {
-             ApiResponse<EmailSyntaxCheckResponse> localVarResponse = CheckEmailSyntaxWithHttpInfo(license, guid, email);
+             ApiResponse<EmailSyntaxCheckResponse> localVarResponse = CheckEmailSyntaxWithHttpInfo(email);
              return localVarResponse.Data;
         }
 
@@ -652,18 +604,10 @@ namespace DataMill.Api
         /// Check email syntax Checks the spelling of an email address to detect typos and spelling errors. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>ApiResponse of EmailSyntaxCheckResponse</returns>
-        public ApiResponse< EmailSyntaxCheckResponse > CheckEmailSyntaxWithHttpInfo (string license, string guid, string email)
+        public ApiResponse< EmailSyntaxCheckResponse > CheckEmailSyntaxWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailSyntax");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailSyntax");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailSyntax");
@@ -693,9 +637,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -721,13 +670,11 @@ namespace DataMill.Api
         /// Check email syntax Checks the spelling of an email address to detect typos and spelling errors. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of EmailSyntaxCheckResponse</returns>
-        public async System.Threading.Tasks.Task<EmailSyntaxCheckResponse> CheckEmailSyntaxAsync (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<EmailSyntaxCheckResponse> CheckEmailSyntaxAsync (string email)
         {
-             ApiResponse<EmailSyntaxCheckResponse> localVarResponse = await CheckEmailSyntaxAsyncWithHttpInfo(license, guid, email);
+             ApiResponse<EmailSyntaxCheckResponse> localVarResponse = await CheckEmailSyntaxAsyncWithHttpInfo(email);
              return localVarResponse.Data;
 
         }
@@ -736,18 +683,10 @@ namespace DataMill.Api
         /// Check email syntax Checks the spelling of an email address to detect typos and spelling errors. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="email">The email address to be checked</param>
         /// <returns>Task of ApiResponse (EmailSyntaxCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EmailSyntaxCheckResponse>> CheckEmailSyntaxAsyncWithHttpInfo (string license, string guid, string email)
+        public async System.Threading.Tasks.Task<ApiResponse<EmailSyntaxCheckResponse>> CheckEmailSyntaxAsyncWithHttpInfo (string email)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling EmailApi->CheckEmailSyntax");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling EmailApi->CheckEmailSyntax");
             // verify the required parameter 'email' is set
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling EmailApi->CheckEmailSyntax");
@@ -777,10 +716,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (email != null) localVarFormParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -43,12 +43,10 @@ namespace DataMill.Api
         /// Real time validation of mobile numbers without triggering a call of send a text message.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>PhoneMobileCheckResponse</returns>
-        PhoneMobileCheckResponse CheckMobilePhone (string license, string guid, string phonenumber, string countrycode);
+        PhoneMobileCheckResponse CheckMobilePhone (string phonenumber, string countrycode);
 
         /// <summary>
         /// Verify mobile phone number
@@ -57,12 +55,10 @@ namespace DataMill.Api
         /// Real time validation of mobile numbers without triggering a call of send a text message.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of PhoneMobileCheckResponse</returns>
-        ApiResponse<PhoneMobileCheckResponse> CheckMobilePhoneWithHttpInfo (string license, string guid, string phonenumber, string countrycode);
+        ApiResponse<PhoneMobileCheckResponse> CheckMobilePhoneWithHttpInfo (string phonenumber, string countrycode);
         /// <summary>
         /// Parse, format and validate phone numbers
         /// </summary>
@@ -70,15 +66,13 @@ namespace DataMill.Api
         /// Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>PhoneFormatResponse</returns>
-        PhoneFormatResponse FormatPhoneNumber (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
+        PhoneFormatResponse FormatPhoneNumber (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
 
         /// <summary>
         /// Parse, format and validate phone numbers
@@ -87,15 +81,13 @@ namespace DataMill.Api
         /// Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>ApiResponse of PhoneFormatResponse</returns>
-        ApiResponse<PhoneFormatResponse> FormatPhoneNumberWithHttpInfo (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
+        ApiResponse<PhoneFormatResponse> FormatPhoneNumberWithHttpInfo (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
         /// <summary>
         /// International and national dial prefix
         /// </summary>
@@ -103,11 +95,9 @@ namespace DataMill.Api
         /// Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>PhoneCountryCodeGetResponse</returns>
-        PhoneCountryCodeGetResponse GetPhoneCountryCode (string license, string guid, string countrycode);
+        PhoneCountryCodeGetResponse GetPhoneCountryCode (string countrycode);
 
         /// <summary>
         /// International and national dial prefix
@@ -116,11 +106,9 @@ namespace DataMill.Api
         /// Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of PhoneCountryCodeGetResponse</returns>
-        ApiResponse<PhoneCountryCodeGetResponse> GetPhoneCountryCodeWithHttpInfo (string license, string guid, string countrycode);
+        ApiResponse<PhoneCountryCodeGetResponse> GetPhoneCountryCodeWithHttpInfo (string countrycode);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -130,12 +118,10 @@ namespace DataMill.Api
         /// Real time validation of mobile numbers without triggering a call of send a text message.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of PhoneMobileCheckResponse</returns>
-        System.Threading.Tasks.Task<PhoneMobileCheckResponse> CheckMobilePhoneAsync (string license, string guid, string phonenumber, string countrycode);
+        System.Threading.Tasks.Task<PhoneMobileCheckResponse> CheckMobilePhoneAsync (string phonenumber, string countrycode);
 
         /// <summary>
         /// Verify mobile phone number
@@ -144,12 +130,10 @@ namespace DataMill.Api
         /// Real time validation of mobile numbers without triggering a call of send a text message.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (PhoneMobileCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PhoneMobileCheckResponse>> CheckMobilePhoneAsyncWithHttpInfo (string license, string guid, string phonenumber, string countrycode);
+        System.Threading.Tasks.Task<ApiResponse<PhoneMobileCheckResponse>> CheckMobilePhoneAsyncWithHttpInfo (string phonenumber, string countrycode);
         /// <summary>
         /// Parse, format and validate phone numbers
         /// </summary>
@@ -157,15 +141,13 @@ namespace DataMill.Api
         /// Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>Task of PhoneFormatResponse</returns>
-        System.Threading.Tasks.Task<PhoneFormatResponse> FormatPhoneNumberAsync (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
+        System.Threading.Tasks.Task<PhoneFormatResponse> FormatPhoneNumberAsync (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
 
         /// <summary>
         /// Parse, format and validate phone numbers
@@ -174,15 +156,13 @@ namespace DataMill.Api
         /// Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>Task of ApiResponse (PhoneFormatResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PhoneFormatResponse>> FormatPhoneNumberAsyncWithHttpInfo (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
+        System.Threading.Tasks.Task<ApiResponse<PhoneFormatResponse>> FormatPhoneNumberAsyncWithHttpInfo (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null);
         /// <summary>
         /// International and national dial prefix
         /// </summary>
@@ -190,11 +170,9 @@ namespace DataMill.Api
         /// Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of PhoneCountryCodeGetResponse</returns>
-        System.Threading.Tasks.Task<PhoneCountryCodeGetResponse> GetPhoneCountryCodeAsync (string license, string guid, string countrycode);
+        System.Threading.Tasks.Task<PhoneCountryCodeGetResponse> GetPhoneCountryCodeAsync (string countrycode);
 
         /// <summary>
         /// International and national dial prefix
@@ -203,11 +181,9 @@ namespace DataMill.Api
         /// Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (PhoneCountryCodeGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PhoneCountryCodeGetResponse>> GetPhoneCountryCodeAsyncWithHttpInfo (string license, string guid, string countrycode);
+        System.Threading.Tasks.Task<ApiResponse<PhoneCountryCodeGetResponse>> GetPhoneCountryCodeAsyncWithHttpInfo (string countrycode);
         #endregion Asynchronous Operations
     }
 
@@ -324,14 +300,12 @@ namespace DataMill.Api
         /// Verify mobile phone number Real time validation of mobile numbers without triggering a call of send a text message.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>PhoneMobileCheckResponse</returns>
-        public PhoneMobileCheckResponse CheckMobilePhone (string license, string guid, string phonenumber, string countrycode)
+        public PhoneMobileCheckResponse CheckMobilePhone (string phonenumber, string countrycode)
         {
-             ApiResponse<PhoneMobileCheckResponse> localVarResponse = CheckMobilePhoneWithHttpInfo(license, guid, phonenumber, countrycode);
+             ApiResponse<PhoneMobileCheckResponse> localVarResponse = CheckMobilePhoneWithHttpInfo(phonenumber, countrycode);
              return localVarResponse.Data;
         }
 
@@ -339,19 +313,11 @@ namespace DataMill.Api
         /// Verify mobile phone number Real time validation of mobile numbers without triggering a call of send a text message.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of PhoneMobileCheckResponse</returns>
-        public ApiResponse< PhoneMobileCheckResponse > CheckMobilePhoneWithHttpInfo (string license, string guid, string phonenumber, string countrycode)
+        public ApiResponse< PhoneMobileCheckResponse > CheckMobilePhoneWithHttpInfo (string phonenumber, string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->CheckMobilePhone");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->CheckMobilePhone");
             // verify the required parameter 'phonenumber' is set
             if (phonenumber == null)
                 throw new ApiException(400, "Missing required parameter 'phonenumber' when calling PhoneNumberApi->CheckMobilePhone");
@@ -384,10 +350,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (phonenumber != null) localVarFormParams.Add("phonenumber", Configuration.ApiClient.ParameterToString(phonenumber)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -413,14 +384,12 @@ namespace DataMill.Api
         /// Verify mobile phone number Real time validation of mobile numbers without triggering a call of send a text message.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of PhoneMobileCheckResponse</returns>
-        public async System.Threading.Tasks.Task<PhoneMobileCheckResponse> CheckMobilePhoneAsync (string license, string guid, string phonenumber, string countrycode)
+        public async System.Threading.Tasks.Task<PhoneMobileCheckResponse> CheckMobilePhoneAsync (string phonenumber, string countrycode)
         {
-             ApiResponse<PhoneMobileCheckResponse> localVarResponse = await CheckMobilePhoneAsyncWithHttpInfo(license, guid, phonenumber, countrycode);
+             ApiResponse<PhoneMobileCheckResponse> localVarResponse = await CheckMobilePhoneAsyncWithHttpInfo(phonenumber, countrycode);
              return localVarResponse.Data;
 
         }
@@ -429,19 +398,11 @@ namespace DataMill.Api
         /// Verify mobile phone number Real time validation of mobile numbers without triggering a call of send a text message.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Mobile phone number to be verified.</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (PhoneMobileCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PhoneMobileCheckResponse>> CheckMobilePhoneAsyncWithHttpInfo (string license, string guid, string phonenumber, string countrycode)
+        public async System.Threading.Tasks.Task<ApiResponse<PhoneMobileCheckResponse>> CheckMobilePhoneAsyncWithHttpInfo (string phonenumber, string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->CheckMobilePhone");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->CheckMobilePhone");
             // verify the required parameter 'phonenumber' is set
             if (phonenumber == null)
                 throw new ApiException(400, "Missing required parameter 'phonenumber' when calling PhoneNumberApi->CheckMobilePhone");
@@ -474,11 +435,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (phonenumber != null) localVarFormParams.Add("phonenumber", Configuration.ApiClient.ParameterToString(phonenumber)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -503,17 +468,15 @@ namespace DataMill.Api
         /// Parse, format and validate phone numbers Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>PhoneFormatResponse</returns>
-        public PhoneFormatResponse FormatPhoneNumber (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
+        public PhoneFormatResponse FormatPhoneNumber (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
         {
-             ApiResponse<PhoneFormatResponse> localVarResponse = FormatPhoneNumberWithHttpInfo(license, guid, phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
+             ApiResponse<PhoneFormatResponse> localVarResponse = FormatPhoneNumberWithHttpInfo(phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
              return localVarResponse.Data;
         }
 
@@ -521,22 +484,14 @@ namespace DataMill.Api
         /// Parse, format and validate phone numbers Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>ApiResponse of PhoneFormatResponse</returns>
-        public ApiResponse< PhoneFormatResponse > FormatPhoneNumberWithHttpInfo (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
+        public ApiResponse< PhoneFormatResponse > FormatPhoneNumberWithHttpInfo (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->FormatPhoneNumber");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->FormatPhoneNumber");
             // verify the required parameter 'phonenumber' is set
             if (phonenumber == null)
                 throw new ApiException(400, "Missing required parameter 'phonenumber' when calling PhoneNumberApi->FormatPhoneNumber");
@@ -569,13 +524,18 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (phonenumber != null) localVarFormParams.Add("phonenumber", Configuration.ApiClient.ParameterToString(phonenumber)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
             if (format != null) localVarFormParams.Add("format", Configuration.ApiClient.ParameterToString(format)); // form parameter
             if (directDialingDelimiter != null) localVarFormParams.Add("direct_dialing_delimiter", Configuration.ApiClient.ParameterToString(directDialingDelimiter)); // form parameter
             if (allowedDelimiters != null) localVarFormParams.Add("allowed_delimiters", Configuration.ApiClient.ParameterToString(allowedDelimiters)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -601,17 +561,15 @@ namespace DataMill.Api
         /// Parse, format and validate phone numbers Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>Task of PhoneFormatResponse</returns>
-        public async System.Threading.Tasks.Task<PhoneFormatResponse> FormatPhoneNumberAsync (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
+        public async System.Threading.Tasks.Task<PhoneFormatResponse> FormatPhoneNumberAsync (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
         {
-             ApiResponse<PhoneFormatResponse> localVarResponse = await FormatPhoneNumberAsyncWithHttpInfo(license, guid, phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
+             ApiResponse<PhoneFormatResponse> localVarResponse = await FormatPhoneNumberAsyncWithHttpInfo(phonenumber, countrycode, format, directDialingDelimiter, allowedDelimiters);
              return localVarResponse.Data;
 
         }
@@ -620,22 +578,14 @@ namespace DataMill.Api
         /// Parse, format and validate phone numbers Validates a given phone number and converts it to the canonical form. In addition the type of the phone number is determined (e.g. \&quot;fixed line\&quot;, \&quot;mobile\&quot;, ...). The number is not checked for existence. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="phonenumber">Phone number to be formatted and validated</param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <param name="format">The custom format of the returning phone number if valid. The format is a combination of the following placeholders:  * **{countrycode}**: The international dial prefix for the country without leading zero or the \\\&quot;+\\\&quot; sign  * **{nationalcode}**: The regional dial prefix  * **{phonenumber}**: The phone number including the extension and without the international and regional prefix  * **{national_prefix}**: The national dial prefix including the leading zero  * **{international_prefix}**: The international dial prefix including leading zeros.  If no custom format is specified the following combination is used: **+{countrycode} {nationalcode} {phonenumber}** (canonical format)  (optional)</param>
         /// <param name="directDialingDelimiter">Optional define a special character (e.g. -) as delimiter between the phone number and the extension. (optional)</param>
         /// <param name="allowedDelimiters">Optional collection of characters inside the specified phone number which are allowed for delimiter. The collection must be provided as **JSON** formatted string. (optional)</param>
         /// <returns>Task of ApiResponse (PhoneFormatResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PhoneFormatResponse>> FormatPhoneNumberAsyncWithHttpInfo (string license, string guid, string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PhoneFormatResponse>> FormatPhoneNumberAsyncWithHttpInfo (string phonenumber, string countrycode, string format = null, string directDialingDelimiter = null, string allowedDelimiters = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->FormatPhoneNumber");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->FormatPhoneNumber");
             // verify the required parameter 'phonenumber' is set
             if (phonenumber == null)
                 throw new ApiException(400, "Missing required parameter 'phonenumber' when calling PhoneNumberApi->FormatPhoneNumber");
@@ -668,14 +618,18 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (phonenumber != null) localVarFormParams.Add("phonenumber", Configuration.ApiClient.ParameterToString(phonenumber)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
             if (format != null) localVarFormParams.Add("format", Configuration.ApiClient.ParameterToString(format)); // form parameter
             if (directDialingDelimiter != null) localVarFormParams.Add("direct_dialing_delimiter", Configuration.ApiClient.ParameterToString(directDialingDelimiter)); // form parameter
             if (allowedDelimiters != null) localVarFormParams.Add("allowed_delimiters", Configuration.ApiClient.ParameterToString(allowedDelimiters)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -700,13 +654,11 @@ namespace DataMill.Api
         /// International and national dial prefix Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>PhoneCountryCodeGetResponse</returns>
-        public PhoneCountryCodeGetResponse GetPhoneCountryCode (string license, string guid, string countrycode)
+        public PhoneCountryCodeGetResponse GetPhoneCountryCode (string countrycode)
         {
-             ApiResponse<PhoneCountryCodeGetResponse> localVarResponse = GetPhoneCountryCodeWithHttpInfo(license, guid, countrycode);
+             ApiResponse<PhoneCountryCodeGetResponse> localVarResponse = GetPhoneCountryCodeWithHttpInfo(countrycode);
              return localVarResponse.Data;
         }
 
@@ -714,18 +666,10 @@ namespace DataMill.Api
         /// International and national dial prefix Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>ApiResponse of PhoneCountryCodeGetResponse</returns>
-        public ApiResponse< PhoneCountryCodeGetResponse > GetPhoneCountryCodeWithHttpInfo (string license, string guid, string countrycode)
+        public ApiResponse< PhoneCountryCodeGetResponse > GetPhoneCountryCodeWithHttpInfo (string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->GetPhoneCountryCode");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->GetPhoneCountryCode");
             // verify the required parameter 'countrycode' is set
             if (countrycode == null)
                 throw new ApiException(400, "Missing required parameter 'countrycode' when calling PhoneNumberApi->GetPhoneCountryCode");
@@ -755,9 +699,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -783,13 +732,11 @@ namespace DataMill.Api
         /// International and national dial prefix Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of PhoneCountryCodeGetResponse</returns>
-        public async System.Threading.Tasks.Task<PhoneCountryCodeGetResponse> GetPhoneCountryCodeAsync (string license, string guid, string countrycode)
+        public async System.Threading.Tasks.Task<PhoneCountryCodeGetResponse> GetPhoneCountryCodeAsync (string countrycode)
         {
-             ApiResponse<PhoneCountryCodeGetResponse> localVarResponse = await GetPhoneCountryCodeAsyncWithHttpInfo(license, guid, countrycode);
+             ApiResponse<PhoneCountryCodeGetResponse> localVarResponse = await GetPhoneCountryCodeAsyncWithHttpInfo(countrycode);
              return localVarResponse.Data;
 
         }
@@ -798,18 +745,10 @@ namespace DataMill.Api
         /// International and national dial prefix Resolves the national and international dial prefix for a country specified by the given ISO country code.
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="countrycode">ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.</param>
         /// <returns>Task of ApiResponse (PhoneCountryCodeGetResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PhoneCountryCodeGetResponse>> GetPhoneCountryCodeAsyncWithHttpInfo (string license, string guid, string countrycode)
+        public async System.Threading.Tasks.Task<ApiResponse<PhoneCountryCodeGetResponse>> GetPhoneCountryCodeAsyncWithHttpInfo (string countrycode)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling PhoneNumberApi->GetPhoneCountryCode");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling PhoneNumberApi->GetPhoneCountryCode");
             // verify the required parameter 'countrycode' is set
             if (countrycode == null)
                 throw new ApiException(400, "Missing required parameter 'countrycode' when calling PhoneNumberApi->GetPhoneCountryCode");
@@ -839,10 +778,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (countrycode != null) localVarFormParams.Add("countrycode", Configuration.ApiClient.ParameterToString(countrycode)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -86,7 +86,7 @@ namespace DataMill.Model
         /// <param name="StarttransferTime">Time to first byte in seconds (required).</param>
         /// <param name="PrimaryIp">IP address of the most recent connection (required).</param>
         /// <param name="PrimaryPort">Destination port of the connection (required).</param>
-        /// <param name="DownloadContentLength">Number of bytes to download from the resource (-1 means no information available) (required).</param>
+        /// <param name="DownloadContentLength">Number of bytes to download from the resource (-1 means no information available; will be removed in future versions / deprecated) (required).</param>
         /// <param name="ContentType">Content type of the requested resource (required).</param>
         /// <param name="Redirects">Array collection of all urls including redirects (required).</param>
         /// <param name="Parameters">Array collection of all url parameters (required).</param>
@@ -275,9 +275,9 @@ namespace DataMill.Model
         [DataMember(Name="primary_port", EmitDefaultValue=false)]
         public long? PrimaryPort { get; set; }
         /// <summary>
-        /// Number of bytes to download from the resource (-1 means no information available)
+        /// Number of bytes to download from the resource (-1 means no information available; will be removed in future versions / deprecated)
         /// </summary>
-        /// <value>Number of bytes to download from the resource (-1 means no information available)</value>
+        /// <value>Number of bytes to download from the resource (-1 means no information available; will be removed in future versions / deprecated)</value>
         [DataMember(Name="download_content_length", EmitDefaultValue=false)]
         public long? DownloadContentLength { get; set; }
         /// <summary>

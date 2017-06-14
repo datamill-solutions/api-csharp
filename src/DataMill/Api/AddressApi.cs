@@ -40,29 +40,25 @@ namespace DataMill.Api
         /// Try to extract house number from street information
         /// </summary>
         /// <remarks>
-        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>AddressHouseNumberExtractResponse</returns>
-        AddressHouseNumberExtractResponse ExtractHouseNumber (string license, string guid, string street = null, string housenumber = null);
+        AddressHouseNumberExtractResponse ExtractHouseNumber (string street = null, string housenumber = null);
 
         /// <summary>
         /// Try to extract house number from street information
         /// </summary>
         /// <remarks>
-        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>ApiResponse of AddressHouseNumberExtractResponse</returns>
-        ApiResponse<AddressHouseNumberExtractResponse> ExtractHouseNumberWithHttpInfo (string license, string guid, string street = null, string housenumber = null);
+        ApiResponse<AddressHouseNumberExtractResponse> ExtractHouseNumberWithHttpInfo (string street = null, string housenumber = null);
         /// <summary>
         /// Reverse address lookup
         /// </summary>
@@ -70,13 +66,11 @@ namespace DataMill.Api
         /// Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchResponse</returns>
-        AddressSearchResponse LocateAddress (string license, string guid, string latitude, string longitude, string locale = null);
+        AddressSearchResponse LocateAddress (string latitude, string longitude, string locale = null);
 
         /// <summary>
         /// Reverse address lookup
@@ -85,13 +79,11 @@ namespace DataMill.Api
         /// Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchResponse</returns>
-        ApiResponse<AddressSearchResponse> LocateAddressWithHttpInfo (string license, string guid, string latitude, string longitude, string locale = null);
+        ApiResponse<AddressSearchResponse> LocateAddressWithHttpInfo (string latitude, string longitude, string locale = null);
         /// <summary>
         /// Lookup physical postal address
         /// </summary>
@@ -99,8 +91,6 @@ namespace DataMill.Api
         /// Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -112,7 +102,7 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchResponse</returns>
-        AddressSearchResponse SearchAddress (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
+        AddressSearchResponse SearchAddress (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
 
         /// <summary>
         /// Lookup physical postal address
@@ -121,8 +111,6 @@ namespace DataMill.Api
         /// Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -134,7 +122,7 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchResponse</returns>
-        ApiResponse<AddressSearchResponse> SearchAddressWithHttpInfo (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
+        ApiResponse<AddressSearchResponse> SearchAddressWithHttpInfo (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
         /// <summary>
         /// Address lookup with multiple possible results
         /// </summary>
@@ -142,12 +130,10 @@ namespace DataMill.Api
         /// Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchMultipleResponse</returns>
-        AddressSearchMultipleResponse SearchAddressMultiple (string license, string guid, string address, string locale = null);
+        AddressSearchMultipleResponse SearchAddressMultiple (string address, string locale = null);
 
         /// <summary>
         /// Address lookup with multiple possible results
@@ -156,41 +142,35 @@ namespace DataMill.Api
         /// Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchMultipleResponse</returns>
-        ApiResponse<AddressSearchMultipleResponse> SearchAddressMultipleWithHttpInfo (string license, string guid, string address, string locale = null);
+        ApiResponse<AddressSearchMultipleResponse> SearchAddressMultipleWithHttpInfo (string address, string locale = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// Try to extract house number from street information
         /// </summary>
         /// <remarks>
-        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>Task of AddressHouseNumberExtractResponse</returns>
-        System.Threading.Tasks.Task<AddressHouseNumberExtractResponse> ExtractHouseNumberAsync (string license, string guid, string street = null, string housenumber = null);
+        System.Threading.Tasks.Task<AddressHouseNumberExtractResponse> ExtractHouseNumberAsync (string street = null, string housenumber = null);
 
         /// <summary>
         /// Try to extract house number from street information
         /// </summary>
         /// <remarks>
-        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>Task of ApiResponse (AddressHouseNumberExtractResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddressHouseNumberExtractResponse>> ExtractHouseNumberAsyncWithHttpInfo (string license, string guid, string street = null, string housenumber = null);
+        System.Threading.Tasks.Task<ApiResponse<AddressHouseNumberExtractResponse>> ExtractHouseNumberAsyncWithHttpInfo (string street = null, string housenumber = null);
         /// <summary>
         /// Reverse address lookup
         /// </summary>
@@ -198,13 +178,11 @@ namespace DataMill.Api
         /// Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchResponse</returns>
-        System.Threading.Tasks.Task<AddressSearchResponse> LocateAddressAsync (string license, string guid, string latitude, string longitude, string locale = null);
+        System.Threading.Tasks.Task<AddressSearchResponse> LocateAddressAsync (string latitude, string longitude, string locale = null);
 
         /// <summary>
         /// Reverse address lookup
@@ -213,13 +191,11 @@ namespace DataMill.Api
         /// Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> LocateAddressAsyncWithHttpInfo (string license, string guid, string latitude, string longitude, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> LocateAddressAsyncWithHttpInfo (string latitude, string longitude, string locale = null);
         /// <summary>
         /// Lookup physical postal address
         /// </summary>
@@ -227,8 +203,6 @@ namespace DataMill.Api
         /// Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -240,7 +214,7 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchResponse</returns>
-        System.Threading.Tasks.Task<AddressSearchResponse> SearchAddressAsync (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
+        System.Threading.Tasks.Task<AddressSearchResponse> SearchAddressAsync (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
 
         /// <summary>
         /// Lookup physical postal address
@@ -249,8 +223,6 @@ namespace DataMill.Api
         /// Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -262,7 +234,7 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> SearchAddressAsyncWithHttpInfo (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> SearchAddressAsyncWithHttpInfo (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null);
         /// <summary>
         /// Address lookup with multiple possible results
         /// </summary>
@@ -270,12 +242,10 @@ namespace DataMill.Api
         /// Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchMultipleResponse</returns>
-        System.Threading.Tasks.Task<AddressSearchMultipleResponse> SearchAddressMultipleAsync (string license, string guid, string address, string locale = null);
+        System.Threading.Tasks.Task<AddressSearchMultipleResponse> SearchAddressMultipleAsync (string address, string locale = null);
 
         /// <summary>
         /// Address lookup with multiple possible results
@@ -284,12 +254,10 @@ namespace DataMill.Api
         /// Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchMultipleResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddressSearchMultipleResponse>> SearchAddressMultipleAsyncWithHttpInfo (string license, string guid, string address, string locale = null);
+        System.Threading.Tasks.Task<ApiResponse<AddressSearchMultipleResponse>> SearchAddressMultipleAsyncWithHttpInfo (string address, string locale = null);
         #endregion Asynchronous Operations
     }
 
@@ -403,37 +371,27 @@ namespace DataMill.Api
         }
 
         /// <summary>
-        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>AddressHouseNumberExtractResponse</returns>
-        public AddressHouseNumberExtractResponse ExtractHouseNumber (string license, string guid, string street = null, string housenumber = null)
+        public AddressHouseNumberExtractResponse ExtractHouseNumber (string street = null, string housenumber = null)
         {
-             ApiResponse<AddressHouseNumberExtractResponse> localVarResponse = ExtractHouseNumberWithHttpInfo(license, guid, street, housenumber);
+             ApiResponse<AddressHouseNumberExtractResponse> localVarResponse = ExtractHouseNumberWithHttpInfo(street, housenumber);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>ApiResponse of AddressHouseNumberExtractResponse</returns>
-        public ApiResponse< AddressHouseNumberExtractResponse > ExtractHouseNumberWithHttpInfo (string license, string guid, string street = null, string housenumber = null)
+        public ApiResponse< AddressHouseNumberExtractResponse > ExtractHouseNumberWithHttpInfo (string street = null, string housenumber = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->ExtractHouseNumber");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->ExtractHouseNumber");
 
             var localVarPath = "/address/housenumber/extract";
             var localVarPathParams = new Dictionary<String, String>();
@@ -460,10 +418,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
             if (housenumber != null) localVarFormParams.Add("housenumber", Configuration.ApiClient.ParameterToString(housenumber)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -486,38 +449,28 @@ namespace DataMill.Api
         }
 
         /// <summary>
-        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>Task of AddressHouseNumberExtractResponse</returns>
-        public async System.Threading.Tasks.Task<AddressHouseNumberExtractResponse> ExtractHouseNumberAsync (string license, string guid, string street = null, string housenumber = null)
+        public async System.Threading.Tasks.Task<AddressHouseNumberExtractResponse> ExtractHouseNumberAsync (string street = null, string housenumber = null)
         {
-             ApiResponse<AddressHouseNumberExtractResponse> localVarResponse = await ExtractHouseNumberAsyncWithHttpInfo(license, guid, street, housenumber);
+             ApiResponse<AddressHouseNumberExtractResponse> localVarResponse = await ExtractHouseNumberAsyncWithHttpInfo(street, housenumber);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+        /// Try to extract house number from street information Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="street">Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional)</param>
         /// <param name="housenumber">Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional)</param>
         /// <returns>Task of ApiResponse (AddressHouseNumberExtractResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddressHouseNumberExtractResponse>> ExtractHouseNumberAsyncWithHttpInfo (string license, string guid, string street = null, string housenumber = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AddressHouseNumberExtractResponse>> ExtractHouseNumberAsyncWithHttpInfo (string street = null, string housenumber = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->ExtractHouseNumber");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->ExtractHouseNumber");
 
             var localVarPath = "/address/housenumber/extract";
             var localVarPathParams = new Dictionary<String, String>();
@@ -544,11 +497,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
             if (housenumber != null) localVarFormParams.Add("housenumber", Configuration.ApiClient.ParameterToString(housenumber)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -573,15 +530,13 @@ namespace DataMill.Api
         /// Reverse address lookup Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchResponse</returns>
-        public AddressSearchResponse LocateAddress (string license, string guid, string latitude, string longitude, string locale = null)
+        public AddressSearchResponse LocateAddress (string latitude, string longitude, string locale = null)
         {
-             ApiResponse<AddressSearchResponse> localVarResponse = LocateAddressWithHttpInfo(license, guid, latitude, longitude, locale);
+             ApiResponse<AddressSearchResponse> localVarResponse = LocateAddressWithHttpInfo(latitude, longitude, locale);
              return localVarResponse.Data;
         }
 
@@ -589,20 +544,12 @@ namespace DataMill.Api
         /// Reverse address lookup Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchResponse</returns>
-        public ApiResponse< AddressSearchResponse > LocateAddressWithHttpInfo (string license, string guid, string latitude, string longitude, string locale = null)
+        public ApiResponse< AddressSearchResponse > LocateAddressWithHttpInfo (string latitude, string longitude, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->LocateAddress");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->LocateAddress");
             // verify the required parameter 'latitude' is set
             if (latitude == null)
                 throw new ApiException(400, "Missing required parameter 'latitude' when calling AddressApi->LocateAddress");
@@ -635,11 +582,16 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (latitude != null) localVarFormParams.Add("latitude", Configuration.ApiClient.ParameterToString(latitude)); // form parameter
             if (longitude != null) localVarFormParams.Add("longitude", Configuration.ApiClient.ParameterToString(longitude)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -665,15 +617,13 @@ namespace DataMill.Api
         /// Reverse address lookup Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchResponse</returns>
-        public async System.Threading.Tasks.Task<AddressSearchResponse> LocateAddressAsync (string license, string guid, string latitude, string longitude, string locale = null)
+        public async System.Threading.Tasks.Task<AddressSearchResponse> LocateAddressAsync (string latitude, string longitude, string locale = null)
         {
-             ApiResponse<AddressSearchResponse> localVarResponse = await LocateAddressAsyncWithHttpInfo(license, guid, latitude, longitude, locale);
+             ApiResponse<AddressSearchResponse> localVarResponse = await LocateAddressAsyncWithHttpInfo(latitude, longitude, locale);
              return localVarResponse.Data;
 
         }
@@ -682,20 +632,12 @@ namespace DataMill.Api
         /// Reverse address lookup Resolve an address corresponding to a given geo-coordinate. The result is a single record which matches the given latitude and longitude. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="latitude">Latitude of the address (use a dot as decimal point)</param>
         /// <param name="longitude">Longitude of the address (use a dot as decimal point)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> LocateAddressAsyncWithHttpInfo (string license, string guid, string latitude, string longitude, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> LocateAddressAsyncWithHttpInfo (string latitude, string longitude, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->LocateAddress");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->LocateAddress");
             // verify the required parameter 'latitude' is set
             if (latitude == null)
                 throw new ApiException(400, "Missing required parameter 'latitude' when calling AddressApi->LocateAddress");
@@ -728,12 +670,16 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (latitude != null) localVarFormParams.Add("latitude", Configuration.ApiClient.ParameterToString(latitude)); // form parameter
             if (longitude != null) localVarFormParams.Add("longitude", Configuration.ApiClient.ParameterToString(longitude)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -758,8 +704,6 @@ namespace DataMill.Api
         /// Lookup physical postal address Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -771,9 +715,9 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchResponse</returns>
-        public AddressSearchResponse SearchAddress (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
+        public AddressSearchResponse SearchAddress (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
         {
-             ApiResponse<AddressSearchResponse> localVarResponse = SearchAddressWithHttpInfo(license, guid, address, country, state, county, city, zip, district, street, housenumber, locale);
+             ApiResponse<AddressSearchResponse> localVarResponse = SearchAddressWithHttpInfo(address, country, state, county, city, zip, district, street, housenumber, locale);
              return localVarResponse.Data;
         }
 
@@ -781,8 +725,6 @@ namespace DataMill.Api
         /// Lookup physical postal address Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -794,14 +736,8 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchResponse</returns>
-        public ApiResponse< AddressSearchResponse > SearchAddressWithHttpInfo (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
+        public ApiResponse< AddressSearchResponse > SearchAddressWithHttpInfo (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->SearchAddress");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->SearchAddress");
 
             var localVarPath = "/address/search";
             var localVarPathParams = new Dictionary<String, String>();
@@ -828,8 +764,6 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (address != null) localVarFormParams.Add("address", Configuration.ApiClient.ParameterToString(address)); // form parameter
             if (country != null) localVarFormParams.Add("country", Configuration.ApiClient.ParameterToString(country)); // form parameter
             if (state != null) localVarFormParams.Add("state", Configuration.ApiClient.ParameterToString(state)); // form parameter
@@ -840,6 +774,13 @@ namespace DataMill.Api
             if (street != null) localVarFormParams.Add("street", Configuration.ApiClient.ParameterToString(street)); // form parameter
             if (housenumber != null) localVarFormParams.Add("housenumber", Configuration.ApiClient.ParameterToString(housenumber)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -865,8 +806,6 @@ namespace DataMill.Api
         /// Lookup physical postal address Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -878,9 +817,9 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchResponse</returns>
-        public async System.Threading.Tasks.Task<AddressSearchResponse> SearchAddressAsync (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
+        public async System.Threading.Tasks.Task<AddressSearchResponse> SearchAddressAsync (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
         {
-             ApiResponse<AddressSearchResponse> localVarResponse = await SearchAddressAsyncWithHttpInfo(license, guid, address, country, state, county, city, zip, district, street, housenumber, locale);
+             ApiResponse<AddressSearchResponse> localVarResponse = await SearchAddressAsyncWithHttpInfo(address, country, state, county, city, zip, district, street, housenumber, locale);
              return localVarResponse.Data;
 
         }
@@ -889,8 +828,6 @@ namespace DataMill.Api
         /// Lookup physical postal address Find geo-location based on unstructured (single-line entry, un-qualified) or based on structured (qualified) address information. The result is a single record which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typos the response keys may be empty.  The unstructured query determines each address part by its own and afterwards finds the closest geo-location. It should only be used if you do not know which address information fits in which query parameter. The structured query provides an additional logic for specific countries to improve the result of the determined geo-location. Please consider that if you do not provide a country name/code the result may end in a different country because the same city + street combination may exist in multiple countries. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  (optional)</param>
         /// <param name="country">Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional)</param>
         /// <param name="state">First subdivision level below the country. Specify the state using full or abbreviated notation. (optional)</param>
@@ -902,14 +839,8 @@ namespace DataMill.Api
         /// <param name="housenumber">The house number or building name. (optional)</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> SearchAddressAsyncWithHttpInfo (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchResponse>> SearchAddressAsyncWithHttpInfo (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->SearchAddress");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->SearchAddress");
 
             var localVarPath = "/address/search";
             var localVarPathParams = new Dictionary<String, String>();
@@ -936,8 +867,6 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (address != null) localVarFormParams.Add("address", Configuration.ApiClient.ParameterToString(address)); // form parameter
             if (country != null) localVarFormParams.Add("country", Configuration.ApiClient.ParameterToString(country)); // form parameter
             if (state != null) localVarFormParams.Add("state", Configuration.ApiClient.ParameterToString(state)); // form parameter
@@ -949,6 +878,12 @@ namespace DataMill.Api
             if (housenumber != null) localVarFormParams.Add("housenumber", Configuration.ApiClient.ParameterToString(housenumber)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -973,14 +908,12 @@ namespace DataMill.Api
         /// Address lookup with multiple possible results Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>AddressSearchMultipleResponse</returns>
-        public AddressSearchMultipleResponse SearchAddressMultiple (string license, string guid, string address, string locale = null)
+        public AddressSearchMultipleResponse SearchAddressMultiple (string address, string locale = null)
         {
-             ApiResponse<AddressSearchMultipleResponse> localVarResponse = SearchAddressMultipleWithHttpInfo(license, guid, address, locale);
+             ApiResponse<AddressSearchMultipleResponse> localVarResponse = SearchAddressMultipleWithHttpInfo(address, locale);
              return localVarResponse.Data;
         }
 
@@ -988,19 +921,11 @@ namespace DataMill.Api
         /// Address lookup with multiple possible results Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>ApiResponse of AddressSearchMultipleResponse</returns>
-        public ApiResponse< AddressSearchMultipleResponse > SearchAddressMultipleWithHttpInfo (string license, string guid, string address, string locale = null)
+        public ApiResponse< AddressSearchMultipleResponse > SearchAddressMultipleWithHttpInfo (string address, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->SearchAddressMultiple");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->SearchAddressMultiple");
             // verify the required parameter 'address' is set
             if (address == null)
                 throw new ApiException(400, "Missing required parameter 'address' when calling AddressApi->SearchAddressMultiple");
@@ -1030,10 +955,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (address != null) localVarFormParams.Add("address", Configuration.ApiClient.ParameterToString(address)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -1059,14 +989,12 @@ namespace DataMill.Api
         /// Address lookup with multiple possible results Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of AddressSearchMultipleResponse</returns>
-        public async System.Threading.Tasks.Task<AddressSearchMultipleResponse> SearchAddressMultipleAsync (string license, string guid, string address, string locale = null)
+        public async System.Threading.Tasks.Task<AddressSearchMultipleResponse> SearchAddressMultipleAsync (string address, string locale = null)
         {
-             ApiResponse<AddressSearchMultipleResponse> localVarResponse = await SearchAddressMultipleAsyncWithHttpInfo(license, guid, address, locale);
+             ApiResponse<AddressSearchMultipleResponse> localVarResponse = await SearchAddressMultipleAsyncWithHttpInfo(address, locale);
              return localVarResponse.Data;
 
         }
@@ -1075,19 +1003,11 @@ namespace DataMill.Api
         /// Address lookup with multiple possible results Find multiple geo-locations based on unstructured (single-line entry, un-qualified) address information. The result is a set of records which matches the given geo-location. The response depends on the data quality of the request. If the request contains too many typo errors the response keys may be empty. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="address">Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.</param>
         /// <param name="locale">The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional)</param>
         /// <returns>Task of ApiResponse (AddressSearchMultipleResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchMultipleResponse>> SearchAddressMultipleAsyncWithHttpInfo (string license, string guid, string address, string locale = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AddressSearchMultipleResponse>> SearchAddressMultipleAsyncWithHttpInfo (string address, string locale = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling AddressApi->SearchAddressMultiple");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling AddressApi->SearchAddressMultiple");
             // verify the required parameter 'address' is set
             if (address == null)
                 throw new ApiException(400, "Missing required parameter 'address' when calling AddressApi->SearchAddressMultiple");
@@ -1117,11 +1037,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (address != null) localVarFormParams.Add("address", Configuration.ApiClient.ParameterToString(address)); // form parameter
             if (locale != null) localVarFormParams.Add("locale", Configuration.ApiClient.ParameterToString(locale)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

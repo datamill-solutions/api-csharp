@@ -1,6 +1,6 @@
 # DataMill.Api.AddressApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 <a name="extracthousenumber"></a>
 # **ExtractHouseNumber**
-> AddressHouseNumberExtractResponse ExtractHouseNumber (string license, string guid, string street = null, string housenumber = null)
+> AddressHouseNumberExtractResponse ExtractHouseNumber (string street = null, string housenumber = null)
 
 Try to extract house number from street information
 
-Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). 
+Find and extract the house number based on partial address information. The result is an extracted street name, house number and additional house number information (e.g. Apartment, Floor, Room). It is necessary to provide street and housenumber, either in street field or separated in street and house number field. 
 
 ### Example
 ```csharp
@@ -33,16 +33,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new AddressApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var street = street_example;  // string | Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional) 
             var housenumber = housenumber_example;  // string | Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional) 
 
             try
             {
                 // Try to extract house number from street information
-                AddressHouseNumberExtractResponse result = apiInstance.ExtractHouseNumber(license, guid, street, housenumber);
+                AddressHouseNumberExtractResponse result = apiInstance.ExtractHouseNumber(street, housenumber);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -58,8 +60,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **street** | **string**| Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. | [optional] 
  **housenumber** | **string**| Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. | [optional] 
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ No authorization required
 
 <a name="locateaddress"></a>
 # **LocateAddress**
-> AddressSearchResponse LocateAddress (string license, string guid, string latitude, string longitude, string locale = null)
+> AddressSearchResponse LocateAddress (string latitude, string longitude, string locale = null)
 
 Reverse address lookup
 
@@ -101,9 +101,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new AddressApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var latitude = latitude_example;  // string | Latitude of the address (use a dot as decimal point)
             var longitude = longitude_example;  // string | Longitude of the address (use a dot as decimal point)
             var locale = locale_example;  // string | The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional) 
@@ -111,7 +113,7 @@ namespace Example
             try
             {
                 // Reverse address lookup
-                AddressSearchResponse result = apiInstance.LocateAddress(license, guid, latitude, longitude, locale);
+                AddressSearchResponse result = apiInstance.LocateAddress(latitude, longitude, locale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,8 +129,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **latitude** | **string**| Latitude of the address (use a dot as decimal point) | 
  **longitude** | **string**| Longitude of the address (use a dot as decimal point) | 
  **locale** | **string**| The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). | [optional] 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ No authorization required
 
 <a name="searchaddress"></a>
 # **SearchAddress**
-> AddressSearchResponse SearchAddress (string license, string guid, string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
+> AddressSearchResponse SearchAddress (string address = null, string country = null, string state = null, string county = null, string city = null, string zip = null, string district = null, string street = null, string housenumber = null, string locale = null)
 
 Lookup physical postal address
 
@@ -171,9 +171,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new AddressApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var address = address_example;  // string | Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the 'address' parameter by itself or you can specify it with other parameters to narrow your search.  (optional) 
             var country = country_example;  // string | Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. (optional) 
             var state = state_example;  // string | First subdivision level below the country. Specify the state using full or abbreviated notation. (optional) 
@@ -188,7 +190,7 @@ namespace Example
             try
             {
                 // Lookup physical postal address
-                AddressSearchResponse result = apiInstance.SearchAddress(license, guid, address, country, state, county, city, zip, district, street, housenumber, locale);
+                AddressSearchResponse result = apiInstance.SearchAddress(address, country, state, county, city, zip, district, street, housenumber, locale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -204,8 +206,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **address** | **string**| Unstructured query parameter. Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. You can specify the &#39;address&#39; parameter by itself or you can specify it with other parameters to narrow your search.  | [optional] 
  **country** | **string**| Specify the country using the country code (ISO 3166-1 alpha-3) or the country name. | [optional] 
  **state** | **string**| First subdivision level below the country. Specify the state using full or abbreviated notation. | [optional] 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ No authorization required
 
 <a name="searchaddressmultiple"></a>
 # **SearchAddressMultiple**
-> AddressSearchMultipleResponse SearchAddressMultiple (string license, string guid, string address, string locale = null)
+> AddressSearchMultipleResponse SearchAddressMultiple (string address, string locale = null)
 
 Address lookup with multiple possible results
 
@@ -255,16 +255,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new AddressApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var address = address_example;  // string | Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter.
             var locale = locale_example;  // string | The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional) 
 
             try
             {
                 // Address lookup with multiple possible results
-                AddressSearchMultipleResponse result = apiInstance.SearchAddressMultiple(license, guid, address, locale);
+                AddressSearchMultipleResponse result = apiInstance.SearchAddressMultiple(address, locale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -280,8 +282,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **address** | **string**| Free-form text containing address elements (e.g. city, postal code, street, house number). Each element is separated using a whitespace. The order of the elements does not matter. | 
  **locale** | **string**| The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). | [optional] 
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

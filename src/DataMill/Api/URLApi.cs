@@ -43,12 +43,10 @@ namespace DataMill.Api
         /// Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>UrlCheckResponse</returns>
-        UrlCheckResponse CheckUrl (string license, string guid, string url, string maxRedirects = null);
+        UrlCheckResponse CheckUrl (string url, string maxRedirects = null);
 
         /// <summary>
         /// Information about web resources
@@ -57,12 +55,10 @@ namespace DataMill.Api
         /// Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>ApiResponse of UrlCheckResponse</returns>
-        ApiResponse<UrlCheckResponse> CheckUrlWithHttpInfo (string license, string guid, string url, string maxRedirects = null);
+        ApiResponse<UrlCheckResponse> CheckUrlWithHttpInfo (string url, string maxRedirects = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -72,12 +68,10 @@ namespace DataMill.Api
         /// Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>Task of UrlCheckResponse</returns>
-        System.Threading.Tasks.Task<UrlCheckResponse> CheckUrlAsync (string license, string guid, string url, string maxRedirects = null);
+        System.Threading.Tasks.Task<UrlCheckResponse> CheckUrlAsync (string url, string maxRedirects = null);
 
         /// <summary>
         /// Information about web resources
@@ -86,12 +80,10 @@ namespace DataMill.Api
         /// Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (UrlCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UrlCheckResponse>> CheckUrlAsyncWithHttpInfo (string license, string guid, string url, string maxRedirects = null);
+        System.Threading.Tasks.Task<ApiResponse<UrlCheckResponse>> CheckUrlAsyncWithHttpInfo (string url, string maxRedirects = null);
         #endregion Asynchronous Operations
     }
 
@@ -208,14 +200,12 @@ namespace DataMill.Api
         /// Information about web resources Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>UrlCheckResponse</returns>
-        public UrlCheckResponse CheckUrl (string license, string guid, string url, string maxRedirects = null)
+        public UrlCheckResponse CheckUrl (string url, string maxRedirects = null)
         {
-             ApiResponse<UrlCheckResponse> localVarResponse = CheckUrlWithHttpInfo(license, guid, url, maxRedirects);
+             ApiResponse<UrlCheckResponse> localVarResponse = CheckUrlWithHttpInfo(url, maxRedirects);
              return localVarResponse.Data;
         }
 
@@ -223,19 +213,11 @@ namespace DataMill.Api
         /// Information about web resources Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>ApiResponse of UrlCheckResponse</returns>
-        public ApiResponse< UrlCheckResponse > CheckUrlWithHttpInfo (string license, string guid, string url, string maxRedirects = null)
+        public ApiResponse< UrlCheckResponse > CheckUrlWithHttpInfo (string url, string maxRedirects = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling URLApi->CheckUrl");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling URLApi->CheckUrl");
             // verify the required parameter 'url' is set
             if (url == null)
                 throw new ApiException(400, "Missing required parameter 'url' when calling URLApi->CheckUrl");
@@ -265,10 +247,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (url != null) localVarFormParams.Add("url", Configuration.ApiClient.ParameterToString(url)); // form parameter
             if (maxRedirects != null) localVarFormParams.Add("max_redirects", Configuration.ApiClient.ParameterToString(maxRedirects)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -294,14 +281,12 @@ namespace DataMill.Api
         /// Information about web resources Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>Task of UrlCheckResponse</returns>
-        public async System.Threading.Tasks.Task<UrlCheckResponse> CheckUrlAsync (string license, string guid, string url, string maxRedirects = null)
+        public async System.Threading.Tasks.Task<UrlCheckResponse> CheckUrlAsync (string url, string maxRedirects = null)
         {
-             ApiResponse<UrlCheckResponse> localVarResponse = await CheckUrlAsyncWithHttpInfo(license, guid, url, maxRedirects);
+             ApiResponse<UrlCheckResponse> localVarResponse = await CheckUrlAsyncWithHttpInfo(url, maxRedirects);
              return localVarResponse.Data;
 
         }
@@ -310,19 +295,11 @@ namespace DataMill.Api
         /// Information about web resources Fetches the resource of a given url and checks if it is available. Only websites using HTTP/HTTPS are allowed. IP addresses and ports other than 80/443 are not permitted and will be ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="url">The url to be checked (e.g. any website)</param>
         /// <param name="maxRedirects">The maximum amount of redirects until the lookup for the root resource will be stopped (default **10**) (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (UrlCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UrlCheckResponse>> CheckUrlAsyncWithHttpInfo (string license, string guid, string url, string maxRedirects = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UrlCheckResponse>> CheckUrlAsyncWithHttpInfo (string url, string maxRedirects = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling URLApi->CheckUrl");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling URLApi->CheckUrl");
             // verify the required parameter 'url' is set
             if (url == null)
                 throw new ApiException(400, "Missing required parameter 'url' when calling URLApi->CheckUrl");
@@ -352,11 +329,15 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (url != null) localVarFormParams.Add("url", Configuration.ApiClient.ParameterToString(url)); // form parameter
             if (maxRedirects != null) localVarFormParams.Add("max_redirects", Configuration.ApiClient.ParameterToString(maxRedirects)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

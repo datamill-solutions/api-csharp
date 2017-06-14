@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertCapitalFirstResponse</returns>
-        ConvertCapitalFirstResponse ConvertCapitalFirst (string license, string guid, string text);
+        ConvertCapitalFirstResponse ConvertCapitalFirst (string text);
 
         /// <summary>
         /// Convert any string to capitalize words
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertCapitalFirstResponse</returns>
-        ApiResponse<ConvertCapitalFirstResponse> ConvertCapitalFirstWithHttpInfo (string license, string guid, string text);
+        ApiResponse<ConvertCapitalFirstResponse> ConvertCapitalFirstWithHttpInfo (string text);
         /// <summary>
         /// Convert any string to lower case
         /// </summary>
@@ -68,11 +64,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective lowercase. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertLowerCaseResponse</returns>
-        ConvertLowerCaseResponse ConvertLowerCase (string license, string guid, string text);
+        ConvertLowerCaseResponse ConvertLowerCase (string text);
 
         /// <summary>
         /// Convert any string to lower case
@@ -81,11 +75,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective lowercase. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertLowerCaseResponse</returns>
-        ApiResponse<ConvertLowerCaseResponse> ConvertLowerCaseWithHttpInfo (string license, string guid, string text);
+        ApiResponse<ConvertLowerCaseResponse> ConvertLowerCaseWithHttpInfo (string text);
         /// <summary>
         /// Convert any string to upper case
         /// </summary>
@@ -93,11 +85,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective capital. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertUpperCaseResponse</returns>
-        ConvertUpperCaseResponse ConvertUpperCase (string license, string guid, string text);
+        ConvertUpperCaseResponse ConvertUpperCase (string text);
 
         /// <summary>
         /// Convert any string to upper case
@@ -106,11 +96,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective capital. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertUpperCaseResponse</returns>
-        ApiResponse<ConvertUpperCaseResponse> ConvertUpperCaseWithHttpInfo (string license, string guid, string text);
+        ApiResponse<ConvertUpperCaseResponse> ConvertUpperCaseWithHttpInfo (string text);
         /// <summary>
         /// Wrap text
         /// </summary>
@@ -118,14 +106,12 @@ namespace DataMill.Api
         /// Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>ConvertWrapResponse</returns>
-        ConvertWrapResponse ConvertWrap (string license, string guid, string text, int? limit, string mode = null, string linebreak = null);
+        ConvertWrapResponse ConvertWrap (string text, int? limit, string mode = null, string linebreak = null);
 
         /// <summary>
         /// Wrap text
@@ -134,14 +120,35 @@ namespace DataMill.Api
         /// Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>ApiResponse of ConvertWrapResponse</returns>
-        ApiResponse<ConvertWrapResponse> ConvertWrapWithHttpInfo (string license, string guid, string text, int? limit, string mode = null, string linebreak = null);
+        ApiResponse<ConvertWrapResponse> ConvertWrapWithHttpInfo (string text, int? limit, string mode = null, string linebreak = null);
+        /// <summary>
+        /// Calculate phonetic codes of a given text
+        /// </summary>
+        /// <remarks>
+        /// Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </remarks>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>PhoneticCodeGetResponse</returns>
+        PhoneticCodeGetResponse GetPhoneticCode (string text, int? phoneticAlgorithm = null);
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text
+        /// </summary>
+        /// <remarks>
+        /// Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </remarks>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>ApiResponse of PhoneticCodeGetResponse</returns>
+        ApiResponse<PhoneticCodeGetResponse> GetPhoneticCodeWithHttpInfo (string text, int? phoneticAlgorithm = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -151,11 +158,9 @@ namespace DataMill.Api
         /// Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertCapitalFirstResponse</returns>
-        System.Threading.Tasks.Task<ConvertCapitalFirstResponse> ConvertCapitalFirstAsync (string license, string guid, string text);
+        System.Threading.Tasks.Task<ConvertCapitalFirstResponse> ConvertCapitalFirstAsync (string text);
 
         /// <summary>
         /// Convert any string to capitalize words
@@ -164,11 +169,9 @@ namespace DataMill.Api
         /// Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertCapitalFirstResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConvertCapitalFirstResponse>> ConvertCapitalFirstAsyncWithHttpInfo (string license, string guid, string text);
+        System.Threading.Tasks.Task<ApiResponse<ConvertCapitalFirstResponse>> ConvertCapitalFirstAsyncWithHttpInfo (string text);
         /// <summary>
         /// Convert any string to lower case
         /// </summary>
@@ -176,11 +179,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective lowercase. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertLowerCaseResponse</returns>
-        System.Threading.Tasks.Task<ConvertLowerCaseResponse> ConvertLowerCaseAsync (string license, string guid, string text);
+        System.Threading.Tasks.Task<ConvertLowerCaseResponse> ConvertLowerCaseAsync (string text);
 
         /// <summary>
         /// Convert any string to lower case
@@ -189,11 +190,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective lowercase. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertLowerCaseResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConvertLowerCaseResponse>> ConvertLowerCaseAsyncWithHttpInfo (string license, string guid, string text);
+        System.Threading.Tasks.Task<ApiResponse<ConvertLowerCaseResponse>> ConvertLowerCaseAsyncWithHttpInfo (string text);
         /// <summary>
         /// Convert any string to upper case
         /// </summary>
@@ -201,11 +200,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective capital. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertUpperCaseResponse</returns>
-        System.Threading.Tasks.Task<ConvertUpperCaseResponse> ConvertUpperCaseAsync (string license, string guid, string text);
+        System.Threading.Tasks.Task<ConvertUpperCaseResponse> ConvertUpperCaseAsync (string text);
 
         /// <summary>
         /// Convert any string to upper case
@@ -214,11 +211,9 @@ namespace DataMill.Api
         /// Converts all letters of any word in a given string in the respective capital. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertUpperCaseResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConvertUpperCaseResponse>> ConvertUpperCaseAsyncWithHttpInfo (string license, string guid, string text);
+        System.Threading.Tasks.Task<ApiResponse<ConvertUpperCaseResponse>> ConvertUpperCaseAsyncWithHttpInfo (string text);
         /// <summary>
         /// Wrap text
         /// </summary>
@@ -226,14 +221,12 @@ namespace DataMill.Api
         /// Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>Task of ConvertWrapResponse</returns>
-        System.Threading.Tasks.Task<ConvertWrapResponse> ConvertWrapAsync (string license, string guid, string text, int? limit, string mode = null, string linebreak = null);
+        System.Threading.Tasks.Task<ConvertWrapResponse> ConvertWrapAsync (string text, int? limit, string mode = null, string linebreak = null);
 
         /// <summary>
         /// Wrap text
@@ -242,14 +235,35 @@ namespace DataMill.Api
         /// Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>Task of ApiResponse (ConvertWrapResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConvertWrapResponse>> ConvertWrapAsyncWithHttpInfo (string license, string guid, string text, int? limit, string mode = null, string linebreak = null);
+        System.Threading.Tasks.Task<ApiResponse<ConvertWrapResponse>> ConvertWrapAsyncWithHttpInfo (string text, int? limit, string mode = null, string linebreak = null);
+        /// <summary>
+        /// Calculate phonetic codes of a given text
+        /// </summary>
+        /// <remarks>
+        /// Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </remarks>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>Task of PhoneticCodeGetResponse</returns>
+        System.Threading.Tasks.Task<PhoneticCodeGetResponse> GetPhoneticCodeAsync (string text, int? phoneticAlgorithm = null);
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text
+        /// </summary>
+        /// <remarks>
+        /// Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </remarks>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>Task of ApiResponse (PhoneticCodeGetResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PhoneticCodeGetResponse>> GetPhoneticCodeAsyncWithHttpInfo (string text, int? phoneticAlgorithm = null);
         #endregion Asynchronous Operations
     }
 
@@ -366,13 +380,11 @@ namespace DataMill.Api
         /// Convert any string to capitalize words Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertCapitalFirstResponse</returns>
-        public ConvertCapitalFirstResponse ConvertCapitalFirst (string license, string guid, string text)
+        public ConvertCapitalFirstResponse ConvertCapitalFirst (string text)
         {
-             ApiResponse<ConvertCapitalFirstResponse> localVarResponse = ConvertCapitalFirstWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertCapitalFirstResponse> localVarResponse = ConvertCapitalFirstWithHttpInfo(text);
              return localVarResponse.Data;
         }
 
@@ -380,18 +392,10 @@ namespace DataMill.Api
         /// Convert any string to capitalize words Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertCapitalFirstResponse</returns>
-        public ApiResponse< ConvertCapitalFirstResponse > ConvertCapitalFirstWithHttpInfo (string license, string guid, string text)
+        public ApiResponse< ConvertCapitalFirstResponse > ConvertCapitalFirstWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertCapitalFirst");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertCapitalFirst");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertCapitalFirst");
@@ -421,9 +425,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -449,13 +458,11 @@ namespace DataMill.Api
         /// Convert any string to capitalize words Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertCapitalFirstResponse</returns>
-        public async System.Threading.Tasks.Task<ConvertCapitalFirstResponse> ConvertCapitalFirstAsync (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ConvertCapitalFirstResponse> ConvertCapitalFirstAsync (string text)
         {
-             ApiResponse<ConvertCapitalFirstResponse> localVarResponse = await ConvertCapitalFirstAsyncWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertCapitalFirstResponse> localVarResponse = await ConvertCapitalFirstAsyncWithHttpInfo(text);
              return localVarResponse.Data;
 
         }
@@ -464,18 +471,10 @@ namespace DataMill.Api
         /// Convert any string to capitalize words Changes any word of a given text so that the first letter is capitalized and all the others turned into lower case. Special proper names, like \&quot;DiCaprio\&quot; are detected and ignored. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertCapitalFirstResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ConvertCapitalFirstResponse>> ConvertCapitalFirstAsyncWithHttpInfo (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ApiResponse<ConvertCapitalFirstResponse>> ConvertCapitalFirstAsyncWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertCapitalFirst");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertCapitalFirst");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertCapitalFirst");
@@ -505,10 +504,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -533,13 +536,11 @@ namespace DataMill.Api
         /// Convert any string to lower case Converts all letters of any word in a given string in the respective lowercase. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertLowerCaseResponse</returns>
-        public ConvertLowerCaseResponse ConvertLowerCase (string license, string guid, string text)
+        public ConvertLowerCaseResponse ConvertLowerCase (string text)
         {
-             ApiResponse<ConvertLowerCaseResponse> localVarResponse = ConvertLowerCaseWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertLowerCaseResponse> localVarResponse = ConvertLowerCaseWithHttpInfo(text);
              return localVarResponse.Data;
         }
 
@@ -547,18 +548,10 @@ namespace DataMill.Api
         /// Convert any string to lower case Converts all letters of any word in a given string in the respective lowercase. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertLowerCaseResponse</returns>
-        public ApiResponse< ConvertLowerCaseResponse > ConvertLowerCaseWithHttpInfo (string license, string guid, string text)
+        public ApiResponse< ConvertLowerCaseResponse > ConvertLowerCaseWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertLowerCase");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertLowerCase");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertLowerCase");
@@ -588,9 +581,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -616,13 +614,11 @@ namespace DataMill.Api
         /// Convert any string to lower case Converts all letters of any word in a given string in the respective lowercase. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertLowerCaseResponse</returns>
-        public async System.Threading.Tasks.Task<ConvertLowerCaseResponse> ConvertLowerCaseAsync (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ConvertLowerCaseResponse> ConvertLowerCaseAsync (string text)
         {
-             ApiResponse<ConvertLowerCaseResponse> localVarResponse = await ConvertLowerCaseAsyncWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertLowerCaseResponse> localVarResponse = await ConvertLowerCaseAsyncWithHttpInfo(text);
              return localVarResponse.Data;
 
         }
@@ -631,18 +627,10 @@ namespace DataMill.Api
         /// Convert any string to lower case Converts all letters of any word in a given string in the respective lowercase. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertLowerCaseResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ConvertLowerCaseResponse>> ConvertLowerCaseAsyncWithHttpInfo (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ApiResponse<ConvertLowerCaseResponse>> ConvertLowerCaseAsyncWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertLowerCase");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertLowerCase");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertLowerCase");
@@ -672,10 +660,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -700,13 +692,11 @@ namespace DataMill.Api
         /// Convert any string to upper case Converts all letters of any word in a given string in the respective capital. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ConvertUpperCaseResponse</returns>
-        public ConvertUpperCaseResponse ConvertUpperCase (string license, string guid, string text)
+        public ConvertUpperCaseResponse ConvertUpperCase (string text)
         {
-             ApiResponse<ConvertUpperCaseResponse> localVarResponse = ConvertUpperCaseWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertUpperCaseResponse> localVarResponse = ConvertUpperCaseWithHttpInfo(text);
              return localVarResponse.Data;
         }
 
@@ -714,18 +704,10 @@ namespace DataMill.Api
         /// Convert any string to upper case Converts all letters of any word in a given string in the respective capital. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>ApiResponse of ConvertUpperCaseResponse</returns>
-        public ApiResponse< ConvertUpperCaseResponse > ConvertUpperCaseWithHttpInfo (string license, string guid, string text)
+        public ApiResponse< ConvertUpperCaseResponse > ConvertUpperCaseWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertUpperCase");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertUpperCase");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertUpperCase");
@@ -755,9 +737,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -783,13 +770,11 @@ namespace DataMill.Api
         /// Convert any string to upper case Converts all letters of any word in a given string in the respective capital. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ConvertUpperCaseResponse</returns>
-        public async System.Threading.Tasks.Task<ConvertUpperCaseResponse> ConvertUpperCaseAsync (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ConvertUpperCaseResponse> ConvertUpperCaseAsync (string text)
         {
-             ApiResponse<ConvertUpperCaseResponse> localVarResponse = await ConvertUpperCaseAsyncWithHttpInfo(license, guid, text);
+             ApiResponse<ConvertUpperCaseResponse> localVarResponse = await ConvertUpperCaseAsyncWithHttpInfo(text);
              return localVarResponse.Data;
 
         }
@@ -798,18 +783,10 @@ namespace DataMill.Api
         /// Convert any string to upper case Converts all letters of any word in a given string in the respective capital. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Free-form text to be converted.</param>
         /// <returns>Task of ApiResponse (ConvertUpperCaseResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ConvertUpperCaseResponse>> ConvertUpperCaseAsyncWithHttpInfo (string license, string guid, string text)
+        public async System.Threading.Tasks.Task<ApiResponse<ConvertUpperCaseResponse>> ConvertUpperCaseAsyncWithHttpInfo (string text)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertUpperCase");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertUpperCase");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertUpperCase");
@@ -839,10 +816,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -867,16 +848,14 @@ namespace DataMill.Api
         /// Wrap text Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>ConvertWrapResponse</returns>
-        public ConvertWrapResponse ConvertWrap (string license, string guid, string text, int? limit, string mode = null, string linebreak = null)
+        public ConvertWrapResponse ConvertWrap (string text, int? limit, string mode = null, string linebreak = null)
         {
-             ApiResponse<ConvertWrapResponse> localVarResponse = ConvertWrapWithHttpInfo(license, guid, text, limit, mode, linebreak);
+             ApiResponse<ConvertWrapResponse> localVarResponse = ConvertWrapWithHttpInfo(text, limit, mode, linebreak);
              return localVarResponse.Data;
         }
 
@@ -884,21 +863,13 @@ namespace DataMill.Api
         /// Wrap text Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>ApiResponse of ConvertWrapResponse</returns>
-        public ApiResponse< ConvertWrapResponse > ConvertWrapWithHttpInfo (string license, string guid, string text, int? limit, string mode = null, string linebreak = null)
+        public ApiResponse< ConvertWrapResponse > ConvertWrapWithHttpInfo (string text, int? limit, string mode = null, string linebreak = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertWrap");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertWrap");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertWrap");
@@ -931,12 +902,17 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
             if (limit != null) localVarFormParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // form parameter
             if (mode != null) localVarFormParams.Add("mode", Configuration.ApiClient.ParameterToString(mode)); // form parameter
             if (linebreak != null) localVarFormParams.Add("linebreak", Configuration.ApiClient.ParameterToString(linebreak)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -962,16 +938,14 @@ namespace DataMill.Api
         /// Wrap text Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>Task of ConvertWrapResponse</returns>
-        public async System.Threading.Tasks.Task<ConvertWrapResponse> ConvertWrapAsync (string license, string guid, string text, int? limit, string mode = null, string linebreak = null)
+        public async System.Threading.Tasks.Task<ConvertWrapResponse> ConvertWrapAsync (string text, int? limit, string mode = null, string linebreak = null)
         {
-             ApiResponse<ConvertWrapResponse> localVarResponse = await ConvertWrapAsyncWithHttpInfo(license, guid, text, limit, mode, linebreak);
+             ApiResponse<ConvertWrapResponse> localVarResponse = await ConvertWrapAsyncWithHttpInfo(text, limit, mode, linebreak);
              return localVarResponse.Data;
 
         }
@@ -980,21 +954,13 @@ namespace DataMill.Api
         /// Wrap text Breaks a text into multiple newlines. Each line will be separated by a \\r (CR, ASCII 13) and \\n (LF, ASCII 10) character. The number of characters a line break will be inserted after can be justified. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="text">Fre-form text to be wrapped.</param>
         /// <param name="limit">The number of characters a linefeed will be inserted after (maximum character length per line).</param>
         /// <param name="mode">The mode how the linefeed will be inserted. Either before (default) the current word, after the current word or exactly after the character. Possible values are **before** to break before last word, **after** to break after last word, **exact** to break at limit.  (optional)</param>
         /// <param name="linebreak">Defines which line separator should be used. Possible values are **full** for *\\r\\n*, **single** for *\\n*, **html** for *&amp;lt;br&amp;gt;*  (optional)</param>
         /// <returns>Task of ApiResponse (ConvertWrapResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ConvertWrapResponse>> ConvertWrapAsyncWithHttpInfo (string license, string guid, string text, int? limit, string mode = null, string linebreak = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ConvertWrapResponse>> ConvertWrapAsyncWithHttpInfo (string text, int? limit, string mode = null, string linebreak = null)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling ConvertApi->ConvertWrap");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling ConvertApi->ConvertWrap");
             // verify the required parameter 'text' is set
             if (text == null)
                 throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->ConvertWrap");
@@ -1027,13 +993,17 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
             if (limit != null) localVarFormParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // form parameter
             if (mode != null) localVarFormParams.Add("mode", Configuration.ApiClient.ParameterToString(mode)); // form parameter
             if (linebreak != null) localVarFormParams.Add("linebreak", Configuration.ApiClient.ParameterToString(linebreak)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1051,6 +1021,168 @@ namespace DataMill.Api
             return new ApiResponse<ConvertWrapResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ConvertWrapResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConvertWrapResponse)));
+            
+        }
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </summary>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>PhoneticCodeGetResponse</returns>
+        public PhoneticCodeGetResponse GetPhoneticCode (string text, int? phoneticAlgorithm = null)
+        {
+             ApiResponse<PhoneticCodeGetResponse> localVarResponse = GetPhoneticCodeWithHttpInfo(text, phoneticAlgorithm);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </summary>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>ApiResponse of PhoneticCodeGetResponse</returns>
+        public ApiResponse< PhoneticCodeGetResponse > GetPhoneticCodeWithHttpInfo (string text, int? phoneticAlgorithm = null)
+        {
+            // verify the required parameter 'text' is set
+            if (text == null)
+                throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->GetPhoneticCode");
+
+            var localVarPath = "/phonetic/code/get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
+            if (phoneticAlgorithm != null) localVarFormParams.Add("phonetic_algorithm", Configuration.ApiClient.ParameterToString(phoneticAlgorithm)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPhoneticCode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PhoneticCodeGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PhoneticCodeGetResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneticCodeGetResponse)));
+            
+        }
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </summary>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>Task of PhoneticCodeGetResponse</returns>
+        public async System.Threading.Tasks.Task<PhoneticCodeGetResponse> GetPhoneticCodeAsync (string text, int? phoneticAlgorithm = null)
+        {
+             ApiResponse<PhoneticCodeGetResponse> localVarResponse = await GetPhoneticCodeAsyncWithHttpInfo(text, phoneticAlgorithm);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Calculate phonetic codes of a given text Get the phonetic code of a given text. Currently three phonetic algorithms are available:  * **Soundex** (algorithm code 1)  * **Colcogne Phonetic** (algorithm code 2)  * **Metaphon** (algorithm code 3) 
+        /// </summary>
+        /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="text">The text which should be converted. Each word will be converted separatly and generate a single entry in the result. </param>
+        /// <param name="phoneticAlgorithm">The phonetic algorithm which should be applied. If no algorithm code will be provided **Soundex** will be used. Codes:  * 1 &#x3D; Soundex  * 2 &#x3D; Colcogne Phonetic  * 3 &#x3D; Metaphon  (optional)</param>
+        /// <returns>Task of ApiResponse (PhoneticCodeGetResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PhoneticCodeGetResponse>> GetPhoneticCodeAsyncWithHttpInfo (string text, int? phoneticAlgorithm = null)
+        {
+            // verify the required parameter 'text' is set
+            if (text == null)
+                throw new ApiException(400, "Missing required parameter 'text' when calling ConvertApi->GetPhoneticCode");
+
+            var localVarPath = "/phonetic/code/get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (text != null) localVarFormParams.Add("text", Configuration.ApiClient.ParameterToString(text)); // form parameter
+            if (phoneticAlgorithm != null) localVarFormParams.Add("phonetic_algorithm", Configuration.ApiClient.ParameterToString(phoneticAlgorithm)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPhoneticCode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PhoneticCodeGetResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PhoneticCodeGetResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhoneticCodeGetResponse)));
             
         }
 

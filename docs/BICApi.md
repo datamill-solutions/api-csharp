@@ -1,6 +1,6 @@
 # DataMill.Api.BICApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="checkbic"></a>
 # **CheckBIC**
-> BicCheckResponse CheckBIC (string license, string guid, string bic)
+> BicCheckResponse CheckBIC (string bic)
 
 Check BIC for spelling
 
@@ -30,15 +30,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new BICApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var bic = bic_example;  // string | BIC to be checked
 
             try
             {
                 // Check BIC for spelling
-                BicCheckResponse result = apiInstance.CheckBIC(license, guid, bic);
+                BicCheckResponse result = apiInstance.CheckBIC(bic);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,8 +56,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **bic** | **string**| BIC to be checked | 
 
 ### Return type
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

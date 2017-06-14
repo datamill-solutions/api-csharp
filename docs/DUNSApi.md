@@ -1,6 +1,6 @@
 # DataMill.Api.DUNSApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getdunsrating"></a>
 # **GetDUNSRating**
-> BusinessDataDunsRatingResponse GetDUNSRating (string license, string guid, string dunsNumber, string reasonCode)
+> BusinessDataDunsRatingResponse GetDUNSRating (string dunsNumber, string reasonCode)
 
 Get marketing information by DUNS number
 
@@ -32,16 +32,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new DUNSApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var dunsNumber = dunsNumber_example;  // string | The D-U-N-S number you are looking for detailed information
             var reasonCode = reasonCode_example;  // string | Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement 
 
             try
             {
                 // Get marketing information by DUNS number
-                BusinessDataDunsRatingResponse result = apiInstance.GetDUNSRating(license, guid, dunsNumber, reasonCode);
+                BusinessDataDunsRatingResponse result = apiInstance.GetDUNSRating(dunsNumber, reasonCode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,8 +59,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **dunsNumber** | **string**| The D-U-N-S number you are looking for detailed information | 
  **reasonCode** | **string**| Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement  | 
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -79,7 +79,7 @@ No authorization required
 
 <a name="resolveduns"></a>
 # **ResolveDUNS**
-> BusinessDataDunsResolveResponse ResolveDUNS (string license, string guid, string dunsNumber, string reasonCode)
+> BusinessDataDunsResolveResponse ResolveDUNS (string dunsNumber, string reasonCode)
 
 Resolve company information by DUNS number
 
@@ -100,16 +100,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new DUNSApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var dunsNumber = dunsNumber_example;  // string | The D-U-N-S number you are looking for detailed information
             var reasonCode = reasonCode_example;  // string | Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement 
 
             try
             {
                 // Resolve company information by DUNS number
-                BusinessDataDunsResolveResponse result = apiInstance.ResolveDUNS(license, guid, dunsNumber, reasonCode);
+                BusinessDataDunsResolveResponse result = apiInstance.ResolveDUNS(dunsNumber, reasonCode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,8 +127,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **dunsNumber** | **string**| The D-U-N-S number you are looking for detailed information | 
  **reasonCode** | **string**| Unique code describing the reason why you like to get detailed information about the specified company. Possible codes are:  * **1**: Credit decisions  * **2**: Credit check (intended business connection)  * **3**: Credit check (ongoing business connection)  * **4**: Debt collections  * **5**: Commercial credit insurance  * **6**: Insurance contract  * **7**: Leasing agreement  * **8**: Rental agreement  | 
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ No authorization required
 
 <a name="searchduns"></a>
 # **SearchDUNS**
-> BusinessDataDunsSearchResponse SearchDUNS (string license, string guid, string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
+> BusinessDataDunsSearchResponse SearchDUNS (string countryCode, string companyName = null, string dunsNumber = null, string state = null, string city = null, string zip = null, string street = null)
 
 Find DUNS number and company information by name
 
@@ -168,9 +168,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new DUNSApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var countryCode = countryCode_example;  // string | ISO 3166-1 alpha-2 country code e.g. 'US'. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information.
             var companyName = companyName_example;  // string | The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) (optional) 
             var dunsNumber = dunsNumber_example;  // string | The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) (optional) 
@@ -182,7 +184,7 @@ namespace Example
             try
             {
                 // Find DUNS number and company information by name
-                BusinessDataDunsSearchResponse result = apiInstance.SearchDUNS(license, guid, countryCode, companyName, dunsNumber, state, city, zip, street);
+                BusinessDataDunsSearchResponse result = apiInstance.SearchDUNS(countryCode, companyName, dunsNumber, state, city, zip, street);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -198,8 +200,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **countryCode** | **string**| ISO 3166-1 alpha-2 country code e.g. &#39;US&#39;. Please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for further information. | 
  **companyName** | **string**| The company name you are looking for or relevant parts of it (may be empty if the duns_number is set) | [optional] 
  **dunsNumber** | **string**| The D-U-N-S number you are looking for detailed information (may be empty if the company_name and country_code are set) | [optional] 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

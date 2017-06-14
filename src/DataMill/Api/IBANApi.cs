@@ -43,11 +43,9 @@ namespace DataMill.Api
         /// Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>IbanCheckResponse</returns>
-        IbanCheckResponse CheckIBAN (string license, string guid, string iban);
+        IbanCheckResponse CheckIBAN (string iban);
 
         /// <summary>
         /// Check IBAN for spelling
@@ -56,11 +54,9 @@ namespace DataMill.Api
         /// Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>ApiResponse of IbanCheckResponse</returns>
-        ApiResponse<IbanCheckResponse> CheckIBANWithHttpInfo (string license, string guid, string iban);
+        ApiResponse<IbanCheckResponse> CheckIBANWithHttpInfo (string iban);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -70,11 +66,9 @@ namespace DataMill.Api
         /// Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>Task of IbanCheckResponse</returns>
-        System.Threading.Tasks.Task<IbanCheckResponse> CheckIBANAsync (string license, string guid, string iban);
+        System.Threading.Tasks.Task<IbanCheckResponse> CheckIBANAsync (string iban);
 
         /// <summary>
         /// Check IBAN for spelling
@@ -83,11 +77,9 @@ namespace DataMill.Api
         /// Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </remarks>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>Task of ApiResponse (IbanCheckResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IbanCheckResponse>> CheckIBANAsyncWithHttpInfo (string license, string guid, string iban);
+        System.Threading.Tasks.Task<ApiResponse<IbanCheckResponse>> CheckIBANAsyncWithHttpInfo (string iban);
         #endregion Asynchronous Operations
     }
 
@@ -204,13 +196,11 @@ namespace DataMill.Api
         /// Check IBAN for spelling Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>IbanCheckResponse</returns>
-        public IbanCheckResponse CheckIBAN (string license, string guid, string iban)
+        public IbanCheckResponse CheckIBAN (string iban)
         {
-             ApiResponse<IbanCheckResponse> localVarResponse = CheckIBANWithHttpInfo(license, guid, iban);
+             ApiResponse<IbanCheckResponse> localVarResponse = CheckIBANWithHttpInfo(iban);
              return localVarResponse.Data;
         }
 
@@ -218,18 +208,10 @@ namespace DataMill.Api
         /// Check IBAN for spelling Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>ApiResponse of IbanCheckResponse</returns>
-        public ApiResponse< IbanCheckResponse > CheckIBANWithHttpInfo (string license, string guid, string iban)
+        public ApiResponse< IbanCheckResponse > CheckIBANWithHttpInfo (string iban)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling IBANApi->CheckIBAN");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling IBANApi->CheckIBAN");
             // verify the required parameter 'iban' is set
             if (iban == null)
                 throw new ApiException(400, "Missing required parameter 'iban' when calling IBANApi->CheckIBAN");
@@ -259,9 +241,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (iban != null) localVarFormParams.Add("iban", Configuration.ApiClient.ParameterToString(iban)); // form parameter
+
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
 
             // make the HTTP request
@@ -287,13 +274,11 @@ namespace DataMill.Api
         /// Check IBAN for spelling Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>Task of IbanCheckResponse</returns>
-        public async System.Threading.Tasks.Task<IbanCheckResponse> CheckIBANAsync (string license, string guid, string iban)
+        public async System.Threading.Tasks.Task<IbanCheckResponse> CheckIBANAsync (string iban)
         {
-             ApiResponse<IbanCheckResponse> localVarResponse = await CheckIBANAsyncWithHttpInfo(license, guid, iban);
+             ApiResponse<IbanCheckResponse> localVarResponse = await CheckIBANAsyncWithHttpInfo(iban);
              return localVarResponse.Data;
 
         }
@@ -302,18 +287,10 @@ namespace DataMill.Api
         /// Check IBAN for spelling Checks the spelling, country code and checksum of an IBAN (International Bank Account Number). The IBAN is an internationally agreed system of identifying bank accounts across national borders. The function does not verify if the IBAN really exists, instead the format is checked for validity only. 
         /// </summary>
         /// <exception cref="DataMill.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="license">The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
-        /// <param name="guid">The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. </param>
         /// <param name="iban">IBAN to be checked.</param>
         /// <returns>Task of ApiResponse (IbanCheckResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<IbanCheckResponse>> CheckIBANAsyncWithHttpInfo (string license, string guid, string iban)
+        public async System.Threading.Tasks.Task<ApiResponse<IbanCheckResponse>> CheckIBANAsyncWithHttpInfo (string iban)
         {
-            // verify the required parameter 'license' is set
-            if (license == null)
-                throw new ApiException(400, "Missing required parameter 'license' when calling IBANApi->CheckIBAN");
-            // verify the required parameter 'guid' is set
-            if (guid == null)
-                throw new ApiException(400, "Missing required parameter 'guid' when calling IBANApi->CheckIBAN");
             // verify the required parameter 'iban' is set
             if (iban == null)
                 throw new ApiException(400, "Missing required parameter 'iban' when calling IBANApi->CheckIBAN");
@@ -343,10 +320,14 @@ namespace DataMill.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (license != null) localVarFormParams.Add("license", Configuration.ApiClient.ParameterToString(license)); // form parameter
-            if (guid != null) localVarFormParams.Add("guid", Configuration.ApiClient.ParameterToString(guid)); // form parameter
             if (iban != null) localVarFormParams.Add("iban", Configuration.ApiClient.ParameterToString(iban)); // form parameter
 
+            // authentication (APISecurity) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

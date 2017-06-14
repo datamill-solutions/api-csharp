@@ -1,6 +1,6 @@
 # DataMill.Api.VATApi
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="checkvat"></a>
 # **CheckVAT**
-> VatCheckResponse CheckVAT (string license, string guid, string vatnumber)
+> VatCheckResponse CheckVAT (string vatnumber)
 
 Check vat number for correctness
 
@@ -32,15 +32,17 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new VATApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var vatnumber = vatnumber_example;  // string | The VAT number of a company within the European Union
 
             try
             {
                 // Check vat number for correctness
-                VatCheckResponse result = apiInstance.CheckVAT(license, guid, vatnumber);
+                VatCheckResponse result = apiInstance.CheckVAT(vatnumber);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -56,8 +58,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **vatnumber** | **string**| The VAT number of a company within the European Union | 
 
 ### Return type
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -77,7 +77,7 @@ No authorization required
 
 <a name="resolvevat"></a>
 # **ResolveVAT**
-> VatResolveResponse ResolveVAT (string license, string guid, string vatnumber, string locale = null)
+> VatResolveResponse ResolveVAT (string vatnumber, string locale = null)
 
 Try to resolve VAT number to company information
 
@@ -98,16 +98,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new VATApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var vatnumber = vatnumber_example;  // string | The VAT number of a company within the European Union
             var locale = locale_example;  // string | The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). (optional) 
 
             try
             {
                 // Try to resolve VAT number to company information
-                VatResolveResponse result = apiInstance.ResolveVAT(license, guid, vatnumber, locale);
+                VatResolveResponse result = apiInstance.ResolveVAT(vatnumber, locale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -123,8 +125,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **vatnumber** | **string**| The VAT number of a company within the European Union | 
  **locale** | **string**| The preferred language of address elements in the result. The locale must be provided according to RFC 4647 standard (language code). | [optional] 
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ No authorization required
 
 <a name="searchvat"></a>
 # **SearchVAT**
-> VatSearchResponse SearchVAT (string license, string guid, string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
+> VatSearchResponse SearchVAT (string company, string city = null, string countryCode = null, string limit = null, string minScore = null)
 
 Find VAT number and company information by name
 
@@ -166,9 +166,11 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new VATApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var company = company_example;  // string | The name of an company. You may enter the fully qualified name or only partial information.
             var city = city_example;  // string | The city where the company's headquarters is located. (optional) 
             var countryCode = countryCode_example;  // string | ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  (optional) 
@@ -178,7 +180,7 @@ namespace Example
             try
             {
                 // Find VAT number and company information by name
-                VatSearchResponse result = apiInstance.SearchVAT(license, guid, company, city, countryCode, limit, minScore);
+                VatSearchResponse result = apiInstance.SearchVAT(company, city, countryCode, limit, minScore);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -194,8 +196,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **string**| The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
- **guid** | **string**| The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request.  | 
  **company** | **string**| The name of an company. You may enter the fully qualified name or only partial information. | 
  **city** | **string**| The city where the company&#39;s headquarters is located. | [optional] 
  **countryCode** | **string**| ISO 3166-1 alpha-2 country code to specify in which country to look for. Possible countries are: **AT, BE, CZ, DK, FI, GB, GR, HU, IT, LU, MT, SI**  | [optional] 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APISecurity](../README.md#APISecurity)
 
 ### HTTP request headers
 

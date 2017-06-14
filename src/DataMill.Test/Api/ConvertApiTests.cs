@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void ConvertCapitalFirstTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string text = null;
-            //var response = instance.ConvertCapitalFirst(license, guid, text);
+            //var response = instance.ConvertCapitalFirst(text);
             //Assert.IsInstanceOf<ConvertCapitalFirstResponse> (response, "response is ConvertCapitalFirstResponse");
         }
         
@@ -97,10 +95,8 @@ namespace DataMill.Test
         public void ConvertLowerCaseTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string text = null;
-            //var response = instance.ConvertLowerCase(license, guid, text);
+            //var response = instance.ConvertLowerCase(text);
             //Assert.IsInstanceOf<ConvertLowerCaseResponse> (response, "response is ConvertLowerCaseResponse");
         }
         
@@ -111,10 +107,8 @@ namespace DataMill.Test
         public void ConvertUpperCaseTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string text = null;
-            //var response = instance.ConvertUpperCase(license, guid, text);
+            //var response = instance.ConvertUpperCase(text);
             //Assert.IsInstanceOf<ConvertUpperCaseResponse> (response, "response is ConvertUpperCaseResponse");
         }
         
@@ -125,14 +119,25 @@ namespace DataMill.Test
         public void ConvertWrapTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string text = null;
             //int? limit = null;
             //string mode = null;
             //string linebreak = null;
-            //var response = instance.ConvertWrap(license, guid, text, limit, mode, linebreak);
+            //var response = instance.ConvertWrap(text, limit, mode, linebreak);
             //Assert.IsInstanceOf<ConvertWrapResponse> (response, "response is ConvertWrapResponse");
+        }
+        
+        /// <summary>
+        /// Test GetPhoneticCode
+        /// </summary>
+        [Test]
+        public void GetPhoneticCodeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string text = null;
+            //int? phoneticAlgorithm = null;
+            //var response = instance.GetPhoneticCode(text, phoneticAlgorithm);
+            //Assert.IsInstanceOf<PhoneticCodeGetResponse> (response, "response is PhoneticCodeGetResponse");
         }
         
     }

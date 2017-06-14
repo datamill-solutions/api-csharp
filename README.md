@@ -56,16 +56,18 @@ namespace Example
         public void main()
         {
             
+            // Configure HTTP basic authorization: APISecurity
+            Configuration.Default.Username = "YOUR_USERNAME";
+            Configuration.Default.Password = "YOUR_PASSWORD";
+
             var apiInstance = new AddressApi();
-            var license = license_example;  // string | The license key is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
-            var guid = guid_example;  // string | The guid is part of the authentication key pair consisting of license and guid (global unique identifier). These two keys are used as your personal API keys. Note that every API request requires both keys, so you will need to include them in each request. 
             var street = street_example;  // string | Free-form text containing the street name and optional the house number including additional house number information. The key is required if housenumber is empty or unset. (optional) 
             var housenumber = housenumber_example;  // string | Free-form text containing the house number including additional house number information and optional the street name. The key is required if street is empty or unset. (optional) 
 
             try
             {
                 // Try to extract house number from street information
-                AddressHouseNumberExtractResponse result = apiInstance.ExtractHouseNumber(license, guid, street, housenumber);
+                AddressHouseNumberExtractResponse result = apiInstance.ExtractHouseNumber(street, housenumber);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -80,7 +82,7 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.methis.at*
+All URIs are relative to *https://api-beta.methis.at*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -93,9 +95,39 @@ Class | Method | HTTP request | Description
 *ConvertApi* | [**ConvertLowerCase**](docs/ConvertApi.md#convertlowercase) | **POST** /convert/lowercase | Convert any string to lower case
 *ConvertApi* | [**ConvertUpperCase**](docs/ConvertApi.md#convertuppercase) | **POST** /convert/uppercase | Convert any string to upper case
 *ConvertApi* | [**ConvertWrap**](docs/ConvertApi.md#convertwrap) | **POST** /convert/wrap | Wrap text
+*ConvertApi* | [**GetPhoneticCode**](docs/ConvertApi.md#getphoneticcode) | **POST** /phonetic/code/get | Calculate phonetic codes of a given text
 *DUNSApi* | [**GetDUNSRating**](docs/DUNSApi.md#getdunsrating) | **POST** /business-data/duns/rating | Get marketing information by DUNS number
 *DUNSApi* | [**ResolveDUNS**](docs/DUNSApi.md#resolveduns) | **POST** /business-data/duns/resolve | Resolve company information by DUNS number
 *DUNSApi* | [**SearchDUNS**](docs/DUNSApi.md#searchduns) | **POST** /business-data/duns/search | Find DUNS number and company information by name
+*DataMillApi* | [**CheckBIC**](docs/DataMillApi.md#checkbic) | **POST** /bic/check | Check BIC for spelling
+*DataMillApi* | [**CheckEmailDomain**](docs/DataMillApi.md#checkemaildomain) | **POST** /email/domain/check | Check email syntax and mail server domain
+*DataMillApi* | [**CheckEmailMailbox**](docs/DataMillApi.md#checkemailmailbox) | **POST** /email/extended/check | Check email syntax, mail server domain and mailbox itself
+*DataMillApi* | [**CheckEmailSyntax**](docs/DataMillApi.md#checkemailsyntax) | **POST** /email/syntax/check | Check email syntax
+*DataMillApi* | [**CheckIBAN**](docs/DataMillApi.md#checkiban) | **POST** /iban/check | Check IBAN for spelling
+*DataMillApi* | [**CheckMobilePhone**](docs/DataMillApi.md#checkmobilephone) | **POST** /phone/mobile/check | Verify mobile phone number
+*DataMillApi* | [**CheckUrl**](docs/DataMillApi.md#checkurl) | **POST** /url/check | Information about web resources
+*DataMillApi* | [**CheckVAT**](docs/DataMillApi.md#checkvat) | **POST** /vat/check | Check vat number for correctness
+*DataMillApi* | [**ConvertCapitalFirst**](docs/DataMillApi.md#convertcapitalfirst) | **POST** /convert/capitalfirst | Convert any string to capitalize words
+*DataMillApi* | [**ConvertLowerCase**](docs/DataMillApi.md#convertlowercase) | **POST** /convert/lowercase | Convert any string to lower case
+*DataMillApi* | [**ConvertUpperCase**](docs/DataMillApi.md#convertuppercase) | **POST** /convert/uppercase | Convert any string to upper case
+*DataMillApi* | [**ConvertWrap**](docs/DataMillApi.md#convertwrap) | **POST** /convert/wrap | Wrap text
+*DataMillApi* | [**ExtractHouseNumber**](docs/DataMillApi.md#extracthousenumber) | **POST** /address/housenumber/extract | Try to extract house number from street information
+*DataMillApi* | [**FormatPhoneNumber**](docs/DataMillApi.md#formatphonenumber) | **POST** /phone/format | Parse, format and validate phone numbers
+*DataMillApi* | [**GetDUNSRating**](docs/DataMillApi.md#getdunsrating) | **POST** /business-data/duns/rating | Get marketing information by DUNS number
+*DataMillApi* | [**GetFirstNames**](docs/DataMillApi.md#getfirstnames) | **POST** /firstname/get | Recognize and extract first names
+*DataMillApi* | [**GetGender**](docs/DataMillApi.md#getgender) | **POST** /gender/get | Recognize gender by first name
+*DataMillApi* | [**GetGenderExtended**](docs/DataMillApi.md#getgenderextended) | **POST** /gender/extended/get | Recognize gender by first name (advanced)
+*DataMillApi* | [**GetPhoneCountryCode**](docs/DataMillApi.md#getphonecountrycode) | **POST** /phone/countrycode/get | International and national dial prefix
+*DataMillApi* | [**GetPhoneticCode**](docs/DataMillApi.md#getphoneticcode) | **POST** /phonetic/code/get | Calculate phonetic codes of a given text
+*DataMillApi* | [**GetSocialMediaActivities**](docs/DataMillApi.md#getsocialmediaactivities) | **POST** /social-media/activities/get | Retrieve social media data by email address
+*DataMillApi* | [**LocateAddress**](docs/DataMillApi.md#locateaddress) | **POST** /address/locate | Reverse address lookup
+*DataMillApi* | [**ResolveDUNS**](docs/DataMillApi.md#resolveduns) | **POST** /business-data/duns/resolve | Resolve company information by DUNS number
+*DataMillApi* | [**ResolveVAT**](docs/DataMillApi.md#resolvevat) | **POST** /vat/resolve | Try to resolve VAT number to company information
+*DataMillApi* | [**SearchAddress**](docs/DataMillApi.md#searchaddress) | **POST** /address/search | Lookup physical postal address
+*DataMillApi* | [**SearchAddressMultiple**](docs/DataMillApi.md#searchaddressmultiple) | **POST** /address/search/multiple | Address lookup with multiple possible results
+*DataMillApi* | [**SearchDUNS**](docs/DataMillApi.md#searchduns) | **POST** /business-data/duns/search | Find DUNS number and company information by name
+*DataMillApi* | [**SearchUndeliverableContact**](docs/DataMillApi.md#searchundeliverablecontact) | **POST** /business-data/undeliverable-contacts/search | Find moved and deceased contacts
+*DataMillApi* | [**SearchVAT**](docs/DataMillApi.md#searchvat) | **POST** /vat/search | Find VAT number and company information by name
 *DeliveryInformationApi* | [**SearchUndeliverableContact**](docs/DeliveryInformationApi.md#searchundeliverablecontact) | **POST** /business-data/undeliverable-contacts/search | Find moved and deceased contacts
 *EmailApi* | [**CheckEmailDomain**](docs/EmailApi.md#checkemaildomain) | **POST** /email/domain/check | Check email syntax and mail server domain
 *EmailApi* | [**CheckEmailMailbox**](docs/EmailApi.md#checkemailmailbox) | **POST** /email/extended/check | Check email syntax, mail server domain and mailbox itself
@@ -150,6 +182,7 @@ Class | Method | HTTP request | Description
  - [Model.PhoneCountryCodeGetResponse](docs/PhoneCountryCodeGetResponse.md)
  - [Model.PhoneFormatResponse](docs/PhoneFormatResponse.md)
  - [Model.PhoneMobileCheckResponse](docs/PhoneMobileCheckResponse.md)
+ - [Model.PhoneticCodeGetResponse](docs/PhoneticCodeGetResponse.md)
  - [Model.SocialMediaActivitiesGetEducation](docs/SocialMediaActivitiesGetEducation.md)
  - [Model.SocialMediaActivitiesGetEmployment](docs/SocialMediaActivitiesGetEmployment.md)
  - [Model.SocialMediaActivitiesGetFacebook](docs/SocialMediaActivitiesGetFacebook.md)
@@ -173,4 +206,8 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
+<a name="APISecurity"></a>
+### APISecurity
+
+- **Type**: HTTP basic authentication
+

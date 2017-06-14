@@ -83,10 +83,8 @@ namespace DataMill.Test
         public void GetGenderTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string firstname = null;
-            //var response = instance.GetGender(license, guid, firstname);
+            //var response = instance.GetGender(firstname);
             //Assert.IsInstanceOf<GenderGetResponse> (response, "response is GenderGetResponse");
         }
         
@@ -97,11 +95,9 @@ namespace DataMill.Test
         public void GetGenderExtendedTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string license = null;
-            //string guid = null;
             //string firstname = null;
             //string countrycode = null;
-            //var response = instance.GetGenderExtended(license, guid, firstname, countrycode);
+            //var response = instance.GetGenderExtended(firstname, countrycode);
             //Assert.IsInstanceOf<GenderExtendedGetResponse> (response, "response is GenderExtendedGetResponse");
         }
         
