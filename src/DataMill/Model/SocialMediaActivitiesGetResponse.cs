@@ -42,9 +42,9 @@ namespace DataMill.Model
     public partial class SocialMediaActivitiesGetResponse :  IEquatable<SocialMediaActivitiesGetResponse>, IValidatableObject
     {
         /// <summary>
-        /// Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your requested is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present) 
+        /// Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your request is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present),  * **-3**: Your requested email address is invalid (please check that the email is url encoded). 
         /// </summary>
-        /// <value>Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your requested is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present) </value>
+        /// <value>Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your request is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present),  * **-3**: Your requested email address is invalid (please check that the email is url encoded). </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -65,13 +65,19 @@ namespace DataMill.Model
             /// Enum NUMBER_MINUS_2 for -2
             /// </summary>
             [EnumMember(Value = "-2")]
-            NUMBER_MINUS_2 = -2
+            NUMBER_MINUS_2 = -2,
+            
+            /// <summary>
+            /// Enum NUMBER_MINUS_3 for -3
+            /// </summary>
+            [EnumMember(Value = "-3")]
+            NUMBER_MINUS_3 = -3
         }
 
         /// <summary>
-        /// Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your requested is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present) 
+        /// Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your request is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present),  * **-3**: Your requested email address is invalid (please check that the email is url encoded). 
         /// </summary>
-        /// <value>Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your requested is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present) </value>
+        /// <value>Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your request is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present),  * **-3**: Your requested email address is invalid (please check that the email is url encoded). </value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -82,7 +88,7 @@ namespace DataMill.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SocialMediaActivitiesGetResponse" /> class.
         /// </summary>
-        /// <param name="Status">Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your requested is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present)  (required).</param>
+        /// <param name="Status">Unique status code describing the response  * **1**: Social media activities found and present in the response,  * **-1**: No social media activities found for the requested email address (in this case all following response keys except the status_description are not present),  * **-2**: Your request is queued and a response will be available within the next 12 hours (in this case all following response keys except the status_description are not present),  * **-3**: Your requested email address is invalid (please check that the email is url encoded).  (required).</param>
         /// <param name="StatusDescription">Short description of the status code (required).</param>
         /// <param name="Name">First name and last name of the person.</param>
         /// <param name="Email">The requested email address.</param>
